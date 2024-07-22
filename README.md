@@ -22,6 +22,3 @@
 <div style="text-align: center;">
 <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&width=435&lines=Frontend+developer.+(Junior)" alt="Typing SVG"></a>
 </div>
-
-
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=vadimkulishov)](https://github.com/anuraghazra/github-readme-stats)
