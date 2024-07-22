@@ -22,3 +22,9 @@
 <div style="text-align: center;">
 <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&width=435&lines=Frontend+developer.+(Junior)" alt="Typing SVG"></a>
 </div>
+
+![](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=vadimkulishov&theme=solarized_dark)
+![](https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=vadimkulishov&theme=solarized_dark)
+![](https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=vadimkulishov&theme=solarized_dark)
+![](https://github-profile-summary-cards.vercel.app/api/cards/stats?username=vadimkulishov&theme=solarized_dark)
+![](https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=vadimkulishov&theme=solarized_dark)
