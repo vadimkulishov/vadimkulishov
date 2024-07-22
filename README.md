@@ -19,4 +19,9 @@
 <h1 align="center">Hi there, I'm <a href="https://t.me/vadimkulishov" target="_blank">Vadim</a> 
 <img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h1>
 <h3 align="center">Computer science student, IT news writer from Russia 🪆</h3>
-<a href="https://git.io/typing-svg" align="center"><img align="center" src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&width=435&lines=Frontend+developer.+(Junior)" alt="Typing SVG"></a>
+<div style="text-align: center;">
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&width=435&lines=Frontend+developer.+(Junior)" alt="Typing SVG"></a>
+</div>
+
+
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=vadimkulishov)](https://github.com/anuraghazra/github-readme-stats)
