@@ -11,6 +11,11 @@
 ![Dev.to blog](https://img.shields.io/badge/dev.to-0A0A0A?style=for-the-badge&logo=dev.to&logoColor=white)
 ![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white)
 
+
+[![trophy](https://github-profile-trophy.vercel.app/?username=vadimkulishov&theme=radical)](https://github.com/ryo-ma/github-profile-trophy)
+
+
+
 <h1 align="center">Hi there, I'm <a href="https://t.me/vadimkulishov" target="_blank">Vadim</a> 
 <img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h1>
 <h3 align="center">Computer science student, IT news writer from Russia 🪆</h3>
