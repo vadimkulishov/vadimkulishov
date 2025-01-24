@@ -20,7 +20,7 @@
 <img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h1>
 <h3 align="center">Computer science student, IT news writer from Russia 🪆</h3>
 <div style="text-align: center;">
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&width=435&lines=iOS+developer.+(Junior)" alt="Typing SVG"></a>
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&width=435&lines=Frontend+developer.+(Junior)" alt="Typing SVG"></a>
 </div>
 
 ![](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=vadimkulishov&theme=solarized_dark)
