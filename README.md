@@ -1,61 +1,108 @@
-### Hi there, I'm Vadim! 🚀
+
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:ff0080,100:7928ca&height=180&section=header&text=Vadim%20Kulishov&fontSize=42&fontColor=ffffff&animation=fadeIn" />
+
+<h3>
+⚡ Frontend Developer • React Engineer • UI Enthusiast ⚡
+</h3>
+
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&duration=3000&pause=800&color=F700FF&center=true&vCenter=true&width=650&lines=Building+modern+web+interfaces;React+%2B+JavaScript+focused;Clean+UI+Smooth+UX;Always+learning+new+tech" />
+
+</div>
+
+---
+
+## 🚀 About Me
+
+```ts
+const vadim = {
+  role: "Frontend Developer",
+  stack: ["JavaScript", "React", "HTML", "CSS"],
+  passion: ["UI/UX", "Animations", "Clean Code"],
+  mindset: "Always learning & improving"
+}
+```
+
+---
+
+## 🧠 Tech Stack
 
 <p align="center">
-  <img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" width="30"> Frontend Developer | Tech Enthusiast | Lifelong Learner
+  <img src="https://skillicons.dev/icons?i=html,css,js,react,git,github,vscode&theme=dark" />
 </p>
 
 ---
 
-### 🚀 Tech Stack
+## 📊 GitHub Stats
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white">
-  <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white">
-  <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white">
-  <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E">
-  <img src="https://img.shields.io/badge/react-%2361DAFB.svg?style=for-the-badge&logo=react&logoColor=white">
-  <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54">
-  <img src="https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white">
-  <img src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white">
-  <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white">
+  <img height="180" src="https://github-readme-stats.vercel.app/api?username=vadimkulishov&show_icons=true&theme=radical&hide_border=true&count_private=true" />
+  <img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=vadimkulishov&layout=compact&theme=radical&hide_border=true" />
 </p>
 
 ---
 
-### 📊 GitHub Stats
+## 🧩 GitHub Insights
 
 <p align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=vadimkulishov&theme=radical">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=vadimkulishov&theme=radical">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=vadimkulishov&theme=radical">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=vadimkulishov&theme=radical">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=vadimkulishov&theme=radical">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=vadimkulishov&theme=tokyonight" />
+</p>
+
+<p align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=vadimkulishov&theme=tokyonight" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=vadimkulishov&theme=tokyonight" />
 </p>
 
 ---
 
-### 🏆 Achievements
+
+## 🔥 Contribution Activity
 
 <p align="center">
-  <a href="https://github.com/ryo-ma/github-profile-trophy">
-    <img src="https://github-profile-trophy.vercel.app/?username=vadimkulishov&theme=radical">
-  </a>
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=vadimkulishov&theme=react-dark&hide_border=true" />
 </p>
 
 ---
 
-### 💡 Fun Fact
-
-💻 Coding is my passion, but I also love keeping up with the latest tech trends and contributing to open-source projects. Let's connect and build something amazing together!
-
-📫 **Reach me on:** [Telegram](https://t.me/vadimkulishov)
-
----
+## ⚔️ Codewars
 
 <p align="center">
   <a href="https://www.codewars.com/users/vadimkulishov">
-    <img src="https://www.codewars.com/users/vadimkulishov/badges/large">
+    <img src="https://www.codewars.com/users/vadimkulishov/badges/large" />
   </a>
 </p>
 
+---
 
+## 📍 Location
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Novyy%20Urengoy,%20Russia-7B2FF7?style=for-the-badge&logo=google-maps&logoColor=white" />
+</p>
+
+---
+
+## 📫 Connect with Me
+
+<p align="center">
+  <a href="https://t.me/vadimkulishov">
+    <img src="https://img.shields.io/badge/Telegram-1DA1F2?style=for-the-badge&logo=telegram&logoColor=white" />
+  </a>
+</p>
+
+---
+
+## 🌌 Fun Fact
+
+✨ I believe great UI is invisible  
+🔥 Code + design = powerful experience  
+🚀 My goal: build products people love to use
+
+---
+
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:7928ca,100:ff0080&height=120&section=footer" />
+
+</div>
