@@ -30,7 +30,6 @@ const vadim = {
   mindset: "Code with purpose. Design with heart."
 }
 ```
-    </td>
   </tr>
 </table>
 
