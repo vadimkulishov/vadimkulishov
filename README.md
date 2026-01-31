@@ -11,7 +11,7 @@
 
 ---
 
-## � About Me
+## About Me
 
 <table>
   <tr>
@@ -74,12 +74,7 @@ const vadim = {
 
 ## 📊 GitHub Statistics & Insights
 
-<div align="center">
 
-<img width="49%" src="https://github-readme-stats.vercel.app/api?username=vadimkulishov&show_icons=true&theme=radical&hide_border=true&count_private=true&bg_color=0d1117&text_color=fff&title_color=00D9FF&icon_color=00D9FF" />
-<img width="49%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=vadimkulishov&layout=compact&theme=radical&hide_border=true&bg_color=0d1117&text_color=fff&title_color=00D9FF" />
-
-</div>
 
 <br/>
 
