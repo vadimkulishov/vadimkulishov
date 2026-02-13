@@ -32,7 +32,6 @@ const me = {
   quote: "Great code is invisible to the user"
 }
 ```
-    </td>
   </tr>
 </table>
 
