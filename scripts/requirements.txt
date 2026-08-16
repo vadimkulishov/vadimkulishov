@@ -1,0 +1,5 @@
+Pillow>=10.0
+opencv-python-headless>=4.8
+rembg>=2.0
+requests>=2.31
+beautifulsoup4>=4.12

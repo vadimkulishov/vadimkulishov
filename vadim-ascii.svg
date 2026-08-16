@@ -1,0 +1,608 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1260"
+    height="800"
+    viewBox="0 0 1260 800"
+>
+<style>
+    .ascii {
+        font-family:
+            "SFMono-Regular",
+            "Cascadia Code",
+            "Roboto Mono",
+            "Courier New",
+            monospace;
+
+        font-size: 10px;
+        font-weight: 500;
+        fill: #b8b8b8;
+        white-space: pre;
+    }
+
+    .row {
+        animation-name: reveal;
+        animation-duration: 0.45s;
+        animation-timing-function: ease-out;
+        animation-fill-mode: both;
+    }
+
+    @keyframes reveal {
+        from {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .row {
+            animation: none;
+        }
+    }
+</style>
+
+<text
+    class="ascii row"
+    x="0"
+    y="10.0"
+    style="animation-delay:0.000s"
+></text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="20.0"
+    style="animation-delay:0.055s"
+></text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="30.0"
+    style="animation-delay:0.110s"
+></text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="40.0"
+    style="animation-delay:0.165s"
+></text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="50.0"
+    style="animation-delay:0.220s"
+></text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="60.0"
+    style="animation-delay:0.275s"
+>                                                                              ;?1(ft_,</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="70.0"
+    style="animation-delay:0.330s"
+>                                                                            ~zC0pdZqbmj[,</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="80.0"
+    style="animation-delay:0.385s"
+>                                                                           ]doZCCUXXObooJ;</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="90.0"
+    style="animation-delay:0.440s"
+>                                                                          ]pdm0UZOCZkaM88L^</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="100.0"
+    style="animation-delay:0.495s"
+>                                                                         !k*ppqZZwpdoWM#8@c</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="110.0"
+    style="animation-delay:0.550s"
+>                                                                         X8awwOZmqmwhakdo8Ml</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="120.0"
+    style="animation-delay:0.605s"
+>                                                                         L&amp;adq0OLOZOQCcjzmM1</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="130.0"
+    style="animation-delay:0.660s"
+>                                                                         v@*pLUYczcnf1_-)tm|</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="140.0"
+    style="animation-delay:0.715s"
+>                                                                         /$h0rrt|\}+l`&quot;I+?c[</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="150.0"
+    style="animation-delay:0.770s"
+>                                                                         ]Wmz/){{]~l``&quot;li+n-</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="160.0"
+    style="animation-delay:0.825s"
+>                                                                         !hQv/1]]-i;,^^:!_u_</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="170.0"
+    style="animation-delay:0.880s"
+>                                                                         :k0uj)]-!,,^..,_?u!</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="180.0"
+    style="animation-delay:0.935s"
+>                                                                         &#x27;bwuuXCZLv(~}nQmCz:</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="190.0"
+    style="animation-delay:0.990s"
+>                                                                         +QwcLOLOo*QiYMqUXv)`</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="200.0"
+    style="animation-delay:1.045s"
+>                                                                        ;ujCYvLwwc0Z+t0wLv11!</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="210.0"
+    style="animation-delay:1.100s"
+>                                                                        i\n0X\cCvt/Z)~\rt}}?l</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="220.0"
+    style="animation-delay:1.155s"
+>                                                                        ,|CQY/[1{?)Ofi_i~!)[^</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="230.0"
+    style="animation-delay:1.210s"
+>                                                                         1nXLu{?~;|m[`i,:!]_.</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="240.0"
+    style="animation-delay:1.265s"
+>                                                                         ;tX0Uj}+Iuh\~):,~{I</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="250.0"
+    style="animation-delay:1.320s"
+>                                                                          l1YQXt}[X**Q1!i?[.</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="260.0"
+    style="animation-delay:1.375s"
+>                                                                            \ZUut/tf|~;~_}I</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="270.0"
+    style="animation-delay:1.430s"
+>                                                                            ?0UYxJqpLYUx[{:</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="280.0"
+    style="animation-delay:1.485s"
+>                                                                            &quot;UJCuJkkwLY|(1.</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="290.0"
+    style="animation-delay:1.540s"
+>                                                                             uQLJczcx)?}f!</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="300.0"
+    style="animation-delay:1.595s"
+>                                                                             fmLLJr{+~i\/</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="310.0"
+    style="animation-delay:1.650s"
+>                                                                             (dZZOQCLQXv{</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="320.0"
+    style="animation-delay:1.705s"
+>                                                                           . 1dqpqdkaqUj]</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="330.0"
+    style="animation-delay:1.760s"
+>                                                                            ^zmwpmwpZvj():.</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="340.0"
+    style="animation-delay:1.815s"
+>                                                                          !)ObQQOOQCcf\}/{-I&quot;</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="350.0"
+    style="animation-delay:1.870s"
+>                                                                        !)zbbw0UYYYvf){[/?~[[_~i!:.</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="360.0"
+    style="animation-delay:1.925s"
+>                                                                     `i)xr/vQ0QUcucx|)})(:!??}1f/)[i.</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="370.0"
+    style="animation-delay:1.980s"
+>                                                                 .;+[1)j\/|1\vJJUnrnj|1{:&#x27;l?-?11il+[-.</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="380.0"
+    style="animation-delay:2.035s"
+>                                                               &#x27;i1(1{-1)[1){??1tur11}+I`.^,l?-[!:,;!~!</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="390.0"
+    style="animation-delay:2.090s"
+>                                                              ,{|{+ii+~l!~___+i!lI,`&#x27;..&#x27;^^,^!?i:;,,:&quot;+;</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="400.0"
+    style="animation-delay:2.145s"
+>                                                              {(_+;&quot;&quot;&quot;^,,:Il!!i!I;&quot;`&quot;,^^^^&quot;&quot;^,;;;&quot;&quot;&quot;^I-`</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="410.0"
+    style="animation-delay:2.200s"
+>                                                             ^/|lI:^^^&quot;,,,:;lIIIII;&quot;,,&quot;^^^,:;II;,^&quot;,&quot;:!_.</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="420.0"
+    style="animation-delay:2.255s"
+>                                                             ]t]~^I,&quot;^&quot;&quot;&quot;&quot;,:;I;;;:;,`^,,,:I;;:,,,&quot;,&quot;&quot;;:_i</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="430.0"
+    style="animation-delay:2.310s"
+>                                                            ^j)_+:,;:,&quot;&quot;&quot;&quot;,,,:;;::,:&quot;^,:,::&quot;&quot;^^,&quot;&quot;&quot;&quot;,;;I?:</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="440.0"
+    style="animation-delay:2.365s"
+>                                                            }j[+~i^;;;::,,,::::::::,:&quot;^^&quot;&quot;^^^&quot;&quot;,,&quot;&quot;,;II:!]^</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="450.0"
+    style="animation-delay:2.420s"
+>                                                           &quot;x|]+!+;:Il;::,::::;:::::,:&quot;^^^&quot;&quot;&quot;&quot;,:,,,Iii;i;~-.</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="460.0"
+    style="animation-delay:2.475s"
+>                                                           {x1?_!i+:Il!I;::::::::;:;:::,&quot;&quot;&quot;&quot;,&quot;,,,,I+_!+l!I+;</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="470.0"
+    style="animation-delay:2.530s"
+>                                                          `n|]-?i!)++!iiI;;;:,:,,,,::::,&quot;&quot;&quot;^&quot;&quot;,,&quot;:i-_[iII,!~.</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="480.0"
+    style="animation-delay:2.585s"
+>                                                          -x{-+-l+/{]+~i!II;:,,,,,:,,,,,&quot;,&quot;^&quot;&quot;,,,!-_]{!;:I;!i</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="490.0"
+    style="animation-delay:2.640s"
+>                                                          t|-[l?::f\{?_+!!ll;:,,,,:;I;,,,,&quot;&quot;,&quot;,&quot;;++~[[~?~i,,[,</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="500.0"
+    style="animation-delay:2.695s"
+>                                                         Ir]-]~Ii&#x27;{f}}]]~!l!I;:,&quot;^^^,::,,,,,,,,:l!ii}{1[!I`,i]^</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="510.0"
+    style="animation-delay:2.750s"
+>                                                         1/~]i]l;I{r)){}-i!lII;:,,&quot;^^&quot;&quot;,,,::,,,:Iiii1/{i~Il;I+-.</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="520.0"
+    style="animation-delay:2.805s"
+>                                                        &quot;t?]+-l[:^}f|{[]-~!l;I;::,:,&quot;&quot;,,::::::::;!l!\/__]]i;;I~!</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="530.0"
+    style="animation-delay:2.860s"
+>                                                        ]|-]-~li_&#x27;]t[????_+!lII;:;;;::;;I;;;;;;:;!;~t([]-l:;Il;-,</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="540.0"
+    style="animation-delay:2.915s"
+>                                                       ^j[+?[!!;_^?zf[--??)-llI;:;I!Illll!i!I;IlliI[tj)~lII;I;^,+.</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="550.0"
+    style="animation-delay:2.970s"
+>                                                       [/[i-[];lI:!UUf]-_+(/-i!IlI;;IIll!ilI:I-1[+i\XXr}\/1-:`&#x27;.]-</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="560.0"
+    style="animation-delay:3.025s"
+>                                                      &quot;/[]_?+[+i-+&quot;fOX)-+I{fj[~i!!;IlllllI::l++]\[!uZULzt}?+;``~1/;</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="570.0"
+    style="animation-delay:3.080s"
+>                                                      ])]-~+_~+I_{-1wOr?+:~frt~i~~li+~i!IlI~1\{~{(?cJJmwYvt{~i[[?{|^</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="580.0"
+    style="animation-delay:3.135s"
+>                                                     I(+?__ii~-+!~{rObC)+I&quot;{rr?:l+l,:;II!!i~-?({?)(+;[jO0CUnjj|[--{1.</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="590.0"
+    style="animation-delay:3.190s"
+>                                                     -~IIli+i!!+]??cddZn]!&quot;;(x|l,i+I&quot;`&quot;:Ii~~~:;}[{t~   !(cOZUx/)[-~1[</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="600.0"
+    style="animation-delay:3.245s"
+>                                                    .j1:^,:;l!~i~[r0oqZJ|_I,+fr],,i+~;``&quot;l~~!!I:I+\).    ;|QQcrt|[++)+</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="610.0"
+    style="animation-delay:3.300s"
+>                                                    ,0Qv1l^^^,l?[t{radZOn[l:I}rf~&quot;&quot;;!!;^`&quot;!~&quot;&quot;lIIi[t;      _CLujr/]+-\I</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="620.0"
+    style="animation-delay:3.355s"
+>                                                    {Yttrut!&#x27;&#x27;:l11 jwdpOC|~:;_(x\~,&quot;,:;,^`&quot;,^,,I~_l?~       IULxrn1__](`</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="630.0"
+    style="animation-delay:3.410s"
+>                                                   .ux|{-]u0n~;?}. txXhQOu_;:![/r(+:&quot;:;;,^^^&quot;;;;~+:++ .    . IJXrv(-_+1[</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="640.0"
+    style="animation-delay:3.465s"
+>                                                   iUt)?__?nbJ{}`  |([p0LL);II+)ff)_;&quot;,;I;:,,I!~?i:1+ ..... . ~Ccv\]-~+/I</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="650.0"
+    style="animation-delay:3.520s"
+>                                                   |Y\[+_])fC[:.   1Y!xqXQv;,:I+(ft(?;&quot;&quot;,:::Il!~~;!|+ &#x27;......  1Qvt[_~~}(</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="660.0"
+    style="animation-delay:3.575s"
+>                                                   cz/)1[[/z\&#x27;.    iZf;OcXL(^`&quot;:~)\/)-I,&quot;&quot;,Iiil;I;?|_.&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;.. .nUj}-~l~fi</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="670.0"
+    style="animation-delay:3.630s"
+>                                                  ,Lzr/([-?f{.     ,UZ~}YfvY),``:+{)()-I::I~i~-?-i\{?.&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;..  :Uu(]-!i)\</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="680.0"
+    style="animation-delay:3.685s"
+>                                                  iZYuf\1}]-{{l    .vwX&quot;(rjnc/I``:+[1))-lIl!!!!iI~f-}`&#x27;&#x27;&#x27;`&#x27;&#x27;..   {Jf1?~i]rl</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="690.0"
+    style="animation-delay:3.740s"
+>                                                  ]wUznj\)[?~_1[,   xmq\`{/uXYj!&#x27;^:i__++i!;::::;l/\+)&quot;.&#x27;&#x27;`&#x27;...   &#x27;vz/[!l+/(</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="700.0"
+    style="animation-delay:3.795s"
+>                                                  ?wCUznf|1[_i~[1]; \Zp0?&quot;+}rJLvi.^:i?{t\]--~llitt]_/I .&#x27;`&#x27;....   iCn(-!~[j,</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="710.0"
+    style="animation-delay:3.850s"
+>                                                  IZQCYzuf\{]?__?)\1j0bdY+::!1cOL]``:++-)j}1(\t|)]-[/] ..&#x27;&#x27;&#x27;...    )Cj{++-/]</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="720.0"
+    style="animation-delay:3.905s"
+>                                                   xmLJYznf\({]][1(//uOdkn-{^,~(Ymv~&quot;,^`&#x27;I{?{[_{1}?(((, ..&#x27;&#x27;....   .nY|]--(t.</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="730.0"
+    style="animation-delay:3.960s"
+>                                                   ^j00CUzxft(1)1(\\())(xCI|nI&quot;;i}vC\:;;:^:l:&quot;^&quot;I-)f{)- ........  . :Yx)[-[rl</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="740.0"
+    style="animation-delay:4.015s"
+>                                                     ~cOLUXunf///t/ft\)?~[[^jL\~I,^+\+!I::;;;IIIi(tt?){`&#x27;&#x27;.......... }Ut([?/}</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="750.0"
+    style="animation-delay:4.070s"
+>                                                      &#x27;|QQCUYcxxrrrnr|)}++]1itmCj)[[((1?-_i!!!!i{(t)_)\I&#x27;^`. ....... `vvt[?{/&#x27;</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="760.0"
+    style="animation-delay:4.125s"
+>                                                        ic0LCCUUYzcvr|)1_ii](-}Jm0CUu/1[?__+i~?}]--+-1t+&#x27;`^&#x27; ........ ?Jx}--\i</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="770.0"
+    style="animation-delay:4.180s"
+>                                                         &#x27;[cQQUCLJJJn/(}]_+~](]_rQQUcunt{-i+1xczzx|{?])?&quot;`^&#x27;......... .xU)~~[1</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="780.0"
+    style="animation-delay:4.235s"
+>                                                           &#x27;~nwOLJCLXvx|[}??-](1l]xYUCLQQUr111())[+!;]}{;`^&#x27;&#x27;......... ;J/?-?|I</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="790.0"
+    style="animation-delay:4.290s"
+>                                                             !MW#ooobOUx|)1?[{}{(i:+?-++1xzr?-~!:^Ii[[+\};`&#x27;```&#x27; ...... {n[-]{}.</text>
+
+<text
+    class="ascii row"
+    x="0"
+    y="800.0"
+    style="animation-delay:4.345s"
+>                                                             ,doaa*&amp;%Mwzt|1{1{1{(ut-I!!^,~?(1-i;:~i]_I![(),.`^^`&#x27;...... `x1+~]1i</text>
+
+</svg>

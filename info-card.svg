@@ -1,0 +1,236 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="490"
+    height="330"
+    viewBox="0 0 490 330"
+>
+<style>
+    .background {
+        fill: #0d1117;
+        stroke: #30363d;
+        stroke-width: 1;
+    }
+
+    .title {
+        fill: #8b949e;
+        font-family:
+            "SFMono-Regular",
+            "Cascadia Code",
+            "Roboto Mono",
+            "Courier New",
+            monospace;
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    .key {
+        font-family:
+            "SFMono-Regular",
+            "Cascadia Code",
+            "Roboto Mono",
+            "Courier New",
+            monospace;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .value {
+        fill: #c9d1d9;
+        font-family:
+            "SFMono-Regular",
+            "Cascadia Code",
+            "Roboto Mono",
+            "Courier New",
+            monospace;
+        font-size: 14px;
+    }
+
+    .line {
+        opacity: 0;
+        transform: translateX(-8px);
+        animation: appear 0.35s ease-out forwards;
+    }
+
+    @keyframes appear {
+        from {
+            opacity: 0;
+            transform: translateX(-8px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .line {
+            animation: none;
+            opacity: 1;
+            transform: none;
+        }
+    }
+</style>
+
+<rect
+    class="background"
+    x="0.5"
+    y="0.5"
+    width="489"
+    height="329"
+    rx="10"
+/>
+
+<circle cx="18" cy="18" r="5" fill="#ff5f56"/>
+<circle cx="35" cy="18" r="5" fill="#ffbd2e"/>
+<circle cx="52" cy="18" r="5" fill="#27c93f"/>
+
+<text
+    class="title"
+    x="72"
+    y="22"
+>
+    vadim@github
+</text>
+
+<line
+    x1="18"
+    y1="43"
+    x2="472"
+    y2="43"
+    stroke="#30363d"
+/>
+
+<g
+    class="line"
+    style="animation-delay:0.00s"
+>
+    <text
+        class="key"
+        fill="#58a6ff"
+        x="24"
+        y="76"
+    >
+        Now
+    </text>
+
+    <text
+        class="value"
+        x="145"
+        y="76"
+    >
+        Frontend Developer
+    </text>
+</g>
+
+<g
+    class="line"
+    style="animation-delay:0.00s"
+>
+    <text
+        class="key"
+        fill="#79c0ff"
+        x="24"
+        y="113"
+    >
+        Stack
+    </text>
+
+    <text
+        class="value"
+        x="145"
+        y="113"
+    >
+        React · TypeScript
+    </text>
+</g>
+
+<g
+    class="line"
+    style="animation-delay:0.00s"
+>
+    <text
+        class="value"
+        x="145"
+        y="150"
+    >
+        JavaScript · CSS
+    </text>
+</g>
+
+<g
+    class="line"
+    style="animation-delay:0.00s"
+>
+    <text
+        class="key"
+        fill="#a5d6ff"
+        x="24"
+        y="187"
+    >
+        Focus
+    </text>
+
+    <text
+        class="value"
+        x="145"
+        y="187"
+    >
+        UI/UX · Performance
+    </text>
+</g>
+
+<g
+    class="line"
+    style="animation-delay:0.00s"
+>
+    <text
+        class="key"
+        fill="#d2a8ff"
+        x="24"
+        y="224"
+    >
+        Learning
+    </text>
+
+    <text
+        class="value"
+        x="145"
+        y="224"
+    >
+        Web3 · Design Systems
+    </text>
+</g>
+
+<g
+    class="line"
+    style="animation-delay:0.00s"
+>
+    <text
+        class="key"
+        fill="#ff7b72"
+        x="24"
+        y="261"
+    >
+        GitHub
+    </text>
+
+    <text
+        class="value"
+        x="145"
+        y="261"
+    >
+        github.com/vadimkulishov
+    </text>
+</g>
+
+
+<text
+    class="title"
+    x="24"
+    y="308"
+>
+    $ whoami
+</text>
+
+</svg>
