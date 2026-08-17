@@ -4,65 +4,78 @@ import json
 import html
 
 
+# =========================================================
+# PATHS
+# =========================================================
+
 ROOT = Path(__file__).resolve().parent.parent
 
 INPUT = ROOT / "data" / "contributions.json"
 OUTPUT = ROOT / "contrib-heatmap.svg"
 
 
-# ---------------------------------------------------------
-# Layout
-# ---------------------------------------------------------
+# =========================================================
+# CANVAS
+# =========================================================
+
+WIDTH = 920
+HEIGHT = 205
 
 WEEKS = 53
 DAYS = 7
 
 CELL = 12
 GAP = 4
-
 STEP = CELL + GAP
 
 LEFT = 28
-TOP = 42
-
-GRID_WIDTH = WEEKS * STEP
-GRID_HEIGHT = DAYS * STEP
-
-WIDTH = 860
-HEIGHT = 180
+TOP = 55
 
 
-# ---------------------------------------------------------
-# Colors
-# ---------------------------------------------------------
+# =========================================================
+# CYBERPUNK 2077 / NIGHT CITY PALETTE
+# =========================================================
 
-BACKGROUND = "#0d1117"
-BORDER = "#30363d"
+BACKGROUND = "#050509"
+PANEL = "#0b0d12"
 
-TEXT = "#c9d1d9"
-MUTED = "#8b949e"
+YELLOW = "#fcee0a"
+CYAN = "#00f0ff"
+MAGENTA = "#ff2a6d"
+
+TEXT = "#e8e8e8"
+MUTED = "#777b85"
+GRID = "#24262d"
 
 LEVEL_COLORS = {
-    0: "#161b22",
-    1: "#0e4429",
-    2: "#006d32",
-    3: "#26a641",
-    4: "#39d353",
+    0: "#111318",
+    1: "#17343a",
+    2: "#006b73",
+    3: "#00c9d7",
+    4: "#fcee0a",
 }
 
 
-# ---------------------------------------------------------
-# Helpers
-# ---------------------------------------------------------
+# =========================================================
+# HELPERS
+# =========================================================
 
 def esc(value):
+    """Safely escape text for SVG."""
     return html.escape(str(value))
 
 
+def format_number(number):
+    """Format numbers with thousands separators."""
+    return f"{number:,}"
+
+
 def load_data():
+    """Load contribution JSON."""
+
     if not INPUT.exists():
         raise FileNotFoundError(
-            f"Contribution data not found: {INPUT}"
+            f"\nContribution file not found:\n{INPUT}\n"
         )
 
     return json.loads(
@@ -74,8 +87,8 @@ def load_data():
 
 def normalize_level(count):
     """
-    Convert an exact contribution count into
-    one of GitHub-style levels 0-4.
+    Convert contribution count into
+    one of five visual levels.
     """
 
     if count <= 0:
@@ -93,11 +106,14 @@ def normalize_level(count):
     return 4
 
 
+# =========================================================
+# CALENDAR
+# =========================================================
+
 def prepare_calendar(days):
     """
-    Create exactly 53 columns × 7 rows.
-
-    GitHub contribution calendars are Sunday -> Saturday.
+    Convert contribution data into
+    a 53 x 7 GitHub-style calendar.
     """
 
     values = {
@@ -115,11 +131,12 @@ def prepare_calendar(days):
 
     latest = max(dates)
 
-    # Find Sunday at the beginning of the latest week.
+    # Find Sunday of the latest week
     latest_sunday = latest - timedelta(
         days=(latest.weekday() + 1) % 7
     )
 
+    # Go back 52 weeks
     start = latest_sunday - timedelta(
         weeks=WEEKS - 1
     )
@@ -127,11 +144,13 @@ def prepare_calendar(days):
     cells = []
 
     for week in range(WEEKS):
+
         current_week = start + timedelta(
             weeks=week
         )
 
         for day in range(DAYS):
+
             current = current_week + timedelta(
                 days=day
             )
@@ -140,58 +159,68 @@ def prepare_calendar(days):
 
             count = values.get(
                 key,
-                0,
+                0
             )
 
-            cells.append(
-                {
-                    "week": week,
-                    "day": day,
-                    "date": key,
-                    "count": count,
-                    "level": normalize_level(count),
-                }
-            )
+            cells.append({
+                "week": week,
+                "day": day,
+                "date": key,
+                "count": count,
+                "level": normalize_level(count),
+            })
 
     return cells
 
 
-def format_number(number):
-    return f"{number:,}"
-
-
-# ---------------------------------------------------------
-# SVG
-# ---------------------------------------------------------
+# =========================================================
+# SVG GENERATION
+# =========================================================
 
 def create_svg(data):
-    stats = data["stats"]
+
+    stats = data.get(
+        "stats",
+        {}
+    )
 
     total = stats.get(
         "total",
-        0,
+        0
     )
 
     current_streak = stats.get(
         "current_streak",
-        0,
+        0
     )
 
     longest = stats.get(
         "longest_streak",
-        {},
+        {}
     )
 
-    longest_streak = longest.get(
-        "length",
-        0,
+    if isinstance(longest, dict):
+        longest_streak = longest.get(
+            "length",
+            0
+        )
+    else:
+        longest_streak = longest
+
+    username = data.get(
+        "username",
+        "vadimkulishov"
     )
 
     cells = prepare_calendar(
-        data["days"]
+        data.get("days", [])
     )
 
     svg = []
+
+    # =====================================================
+    # SVG HEADER + CSS
+    # =====================================================
 
     svg.append(
         f'''<svg
@@ -200,46 +229,51 @@ width="{WIDTH}"
 height="{HEIGHT}"
 viewBox="0 0 {WIDTH} {HEIGHT}"
 role="img"
-aria-label="GitHub contribution heatmap for {esc(data["username"])}"
+aria-label="Cyberpunk GitHub contribution activity for {esc(username)}"
 >
 
 <style>
 
-.background {{
-    fill: {BACKGROUND};
-    stroke: {BORDER};
-    stroke-width: 1;
-}}
-
-.title {{
-    fill: {TEXT};
+* {{
     font-family:
         "SFMono-Regular",
         "Cascadia Code",
         "Roboto Mono",
         "Courier New",
         monospace;
+}}
 
-    font-size: 14px;
-    font-weight: 600;
+.background {{
+    fill: {BACKGROUND};
+    stroke: {YELLOW};
+    stroke-width: 1.5;
+}}
+
+.title {{
+    fill: {YELLOW};
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 2px;
 }}
 
 .subtitle {{
     fill: {MUTED};
-    font-family:
-        "SFMono-Regular",
-        "Cascadia Code",
-        "Roboto Mono",
-        "Courier New",
-        monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+}}
 
-    font-size: 11px;
+.footer {{
+    fill: {TEXT};
+    font-size: 10px;
+    letter-spacing: 0.5px;
 }}
 
 .cell {{
     opacity: 0;
+
     transform-box: fill-box;
     transform-origin: center;
+
     animation:
         reveal 0.35s ease-out forwards;
 }}
@@ -248,16 +282,58 @@ aria-label="GitHub contribution heatmap for {esc(data["username"])}"
 
     from {{
         opacity: 0;
+
         transform:
-            translate(-10px, -10px)
-            scale(0.65);
+            translate(-8px, -8px)
+            scale(0.6);
     }}
 
     to {{
         opacity: 1;
+
         transform:
             translate(0, 0)
             scale(1);
+    }}
+
+}}
+
+.scanline {{
+    opacity: 0.08;
+
+    animation:
+        scan 4s linear infinite;
+}}
+
+@keyframes scan {{
+
+    from {{
+        transform: translateY(-20px);
+    }}
+
+    to {{
+        transform: translateY(220px);
+    }}
+
+}}
+
+.pulse {{
+    animation:
+        pulse 1.8s ease-in-out infinite;
+}}
+
+@keyframes pulse {{
+
+    0% {{
+        opacity: 0.35;
+    }}
+
+    50% {{
+        opacity: 1;
+    }}
+
+    100% {{
+        opacity: 0.35;
     }}
 
 }}
@@ -269,59 +345,199 @@ aria-label="GitHub contribution heatmap for {esc(data["username"])}"
         opacity: 1;
     }}
 
+    .scanline {{
+        animation: none;
+    }}
+
+    .pulse {{
+        animation: none;
+        opacity: 1;
+    }}
+
 }}
 
 </style>
+'''
+    )
 
+    # =====================================================
+    # MAIN BACKGROUND
+    # =====================================================
+
+    svg.append(
+        f'''
 <rect
     class="background"
-    x="0.5"
-    y="0.5"
-    width="{WIDTH - 1}"
-    height="{HEIGHT - 1}"
-    rx="10"
+    x="1"
+    y="1"
+    width="{WIDTH - 2}"
+    height="{HEIGHT - 2}"
+    rx="4"
 />
+'''
+    )
 
+    # =====================================================
+    # OUTER HUD CORNERS
+    # =====================================================
+
+    # TOP LEFT
+
+    svg.append(
+        f'''
+<path
+    d="M1 35 H22 L32 25 H110"
+    fill="none"
+    stroke="{CYAN}"
+    stroke-width="2"
+/>
+'''
+    )
+
+    # TOP RIGHT
+
+    svg.append(
+        f'''
+<path
+    d="M{WIDTH - 110} 25 H{WIDTH - 32} L{WIDTH - 22} 35 H{WIDTH - 1}"
+    fill="none"
+    stroke="{MAGENTA}"
+    stroke-width="2"
+/>
+'''
+    )
+
+    # BOTTOM LEFT
+
+    svg.append(
+        f'''
+<path
+    d="M1 {HEIGHT - 30} H22 L32 {HEIGHT - 20} H110"
+    fill="none"
+    stroke="{MAGENTA}"
+    stroke-width="2"
+/>
+'''
+    )
+
+    # BOTTOM RIGHT
+
+    svg.append(
+        f'''
+<path
+    d="M{WIDTH - 110} {HEIGHT - 20} H{WIDTH - 32} L{WIDTH - 22} {HEIGHT - 30} H{WIDTH - 1}"
+    fill="none"
+    stroke="{CYAN}"
+    stroke-width="2"
+/>
+'''
+    )
+
+    # =====================================================
+    # HEADER
+    # =====================================================
+
+    svg.append(
+        f'''
 <text
     class="title"
-    x="24"
-    y="23"
+    x="28"
+    y="25"
 >
-    $ git log --activity
+    // NET_ACTIVITY
 </text>
 
 <text
     class="subtitle"
-    x="24"
-    y="39"
+    x="28"
+    y="42"
 >
-    {format_number(total)} contributions in the last year
+    {format_number(total)} CONTRIBUTIONS // LAST 365 DAYS
+</text>
+
+<circle
+    class="pulse"
+    cx="{WIDTH - 160}"
+    cy="20"
+    r="4"
+    fill="{YELLOW}"
+/>
+
+<text
+    class="subtitle"
+    x="{WIDTH - 148}"
+    y="24"
+>
+    NODE: ONLINE
 </text>
 '''
     )
 
-    # -----------------------------------------------------
-    # Contribution cells
-    # -----------------------------------------------------
+    # =====================================================
+    # DECORATIVE HEADER LINES
+    # =====================================================
+
+    svg.append(
+        f'''
+<line
+    x1="28"
+    y1="47"
+    x2="{WIDTH - 28}"
+    y2="47"
+    stroke="{GRID}"
+    stroke-width="1"
+/>
+
+<line
+    x1="{WIDTH - 205}"
+    y1="30"
+    x2="{WIDTH - 28}"
+    y2="30"
+    stroke="{GRID}"
+    stroke-width="1"
+/>
+'''
+    )
+
+    # =====================================================
+    # SCANLINE
+    # =====================================================
+
+    svg.append(
+        f'''
+<rect
+    class="scanline"
+    x="0"
+    y="0"
+    width="{WIDTH}"
+    height="2"
+    fill="{CYAN}"
+/>
+'''
+    )
+
+    # =====================================================
+    # HEATMAP CELLS
+    # =====================================================
 
     for cell in cells:
 
         week = cell["week"]
         day = cell["day"]
-        level = cell["level"]
 
         x = LEFT + week * STEP
         y = TOP + day * STEP
 
+        level = cell["level"]
+        count = cell["count"]
+
         color = LEVEL_COLORS[level]
 
-        # Diagonal animation.
+        # Diagonal animation
         delay = (
             week * 0.018
             + day * 0.025
         )
-
-        count = cell["count"]
 
         tooltip = (
             f'{count} contribution'
@@ -337,7 +553,7 @@ aria-label="GitHub contribution heatmap for {esc(data["username"])}"
     y="{y}"
     width="{CELL}"
     height="{CELL}"
-    rx="3"
+    rx="2"
     fill="{color}"
     style="animation-delay:{delay:.3f}s"
 >
@@ -346,40 +562,37 @@ aria-label="GitHub contribution heatmap for {esc(data["username"])}"
 '''
         )
 
-    # -----------------------------------------------------
-    # Legend
-    # -----------------------------------------------------
+    # =====================================================
+    # LEGEND
+    # =====================================================
 
-    legend_x = WIDTH - 145
-    legend_y = 20
+    legend_x = WIDTH - 180
+    legend_y = 45
 
     svg.append(
         f'''
 <text
     class="subtitle"
-    x="{legend_x - 30}"
+    x="{legend_x - 32}"
     y="{legend_y + 9}"
 >
-    Less
+    LESS
 </text>
 '''
     )
 
     for level in range(5):
 
-        x = (
-            legend_x
-            + level * (CELL + 3)
-        )
+        x = legend_x + level * 16
 
         svg.append(
             f'''
 <rect
     x="{x}"
     y="{legend_y}"
-    width="{CELL}"
-    height="{CELL}"
-    rx="3"
+    width="12"
+    height="12"
+    rx="2"
     fill="{LEVEL_COLORS[level]}"
 />
 '''
@@ -389,75 +602,135 @@ aria-label="GitHub contribution heatmap for {esc(data["username"])}"
         f'''
 <text
     class="subtitle"
-    x="{legend_x + 5 * (CELL + 3) + 3}"
+    x="{legend_x + 86}"
     y="{legend_y + 9}"
 >
-    More
+    MORE
 </text>
 '''
     )
 
-    # -----------------------------------------------------
-    # Footer stats
-    # -----------------------------------------------------
-
-    footer_y = HEIGHT - 19
+    # =====================================================
+    # SIDE TECHNICAL LABELS
+    # =====================================================
 
     svg.append(
         f'''
 <text
     class="subtitle"
-    x="24"
-    y="{footer_y}"
+    x="28"
+    y="166"
 >
-    current streak: {current_streak} days
+    ACTIVITY_MATRIX
 </text>
 
 <text
     class="subtitle"
-    x="210"
-    y="{footer_y}"
+    x="28"
+    y="180"
 >
-    longest streak: {longest_streak} days
-</text>
-
-<text
-    class="subtitle"
-    x="{WIDTH - 190}"
-    y="{footer_y}"
->
-    @vadimkulishov
+    53 WEEKS / 07 DAYS
 </text>
 '''
     )
 
-    svg.append("</svg>")
+    # =====================================================
+    # FOOTER
+    # =====================================================
+
+    footer_y = HEIGHT - 17
+
+    svg.append(
+        f'''
+<text
+    class="footer"
+    x="28"
+    y="{footer_y}"
+>
+    STREAK: {current_streak} DAYS
+</text>
+
+<text
+    class="footer"
+    x="190"
+    y="{footer_y}"
+>
+    LONGEST: {longest_streak} DAYS
+</text>
+
+<text
+    class="footer"
+    x="{WIDTH - 205}"
+    y="{footer_y}"
+>
+    VADIM // NIGHT CITY NODE
+</text>
+'''
+    )
+
+    # =====================================================
+    # CLOSE SVG
+    # =====================================================
+
+    svg.append(
+        '''
+</svg>
+'''
+    )
 
     return "\n".join(svg)
 
 
+# =========================================================
+# MAIN
+# =========================================================
+
 def main():
 
-    print("[1/2] Loading contribution data...")
+    print()
+    print("Loading contribution data...")
 
     data = load_data()
 
-    print("[2/2] Rendering heatmap...")
+    print(
+        f"User: {data.get('username', 'unknown')}"
+    )
+
+    print(
+        f"Days: {len(data.get('days', []))}"
+    )
+
+    print()
+    print("Rendering Cyberpunk heatmap...")
 
     svg = create_svg(data)
 
     OUTPUT.write_text(
         svg,
-        encoding="utf-8",
+        encoding="utf-8"
     )
 
     print()
-    print(f"Done: {OUTPUT}")
+    print("================================")
+    print(" CYBERPUNK HEATMAP GENERATED")
+    print("================================")
     print(
-        f"Total contributions: "
-        f"{data['stats']['total']}"
+        f"Contributions: "
+        f"{data.get('stats', {}).get('total', 0)}"
     )
+    print(
+        f"Current streak: "
+        f"{data.get('stats', {}).get('current_streak', 0)}"
+    )
+    print(
+        f"Output: {OUTPUT}"
+    )
+    print()
 
+
+# =========================================================
+# RUN
+# =========================================================
 
 if __name__ == "__main__":
     main()

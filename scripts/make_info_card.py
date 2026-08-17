@@ -7,221 +7,356 @@ ROOT = Path(__file__).resolve().parent.parent
 OUTPUT = ROOT / "info-card.svg"
 
 WIDTH = 490
-HEIGHT = 330
+HEIGHT = 430
 
-BG = "#0d1117"
-BORDER = "#30363d"
-TEXT = "#c9d1d9"
-MUTED = "#8b949e"
+BG = "#0b0d12"
+YELLOW = "#fcee0a"
+CYAN = "#00f0ff"
+MAGENTA = "#ff2a6d"
 
-COLORS = [
-    "#58a6ff",
-    "#79c0ff",
-    "#56d364",
-    "#a5d6ff",
-    "#d2a8ff",
-    "#ff7b72",
-]
-
-TITLE = "vadim@github"
-
-ROWS = [
-    ("Now", "Frontend Developer"),
-    ("Stack", "React · TypeScript"),
-    ("", "JavaScript · CSS"),
-    ("Focus", "UI/UX · Performance"),
-    ("Learning", "Web3 · Design Systems"),
-    ("GitHub", "github.com/vadimkulishov"),
-]
+TEXT = "#e8e8e8"
+MUTED = "#777b85"
+GRID = "#24262d"
 
 
-def esc(value: str) -> str:
-    return html.escape(value)
+def esc(value):
+    return html.escape(str(value))
 
 
-def create_svg():
+def main():
+
     static = os.getenv("STATIC") == "1"
 
-    lines = []
-
-    lines.append(
-        f'''<svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="{WIDTH}"
-    height="{HEIGHT}"
-    viewBox="0 0 {WIDTH} {HEIGHT}"
+    svg = f'''<svg
+xmlns="http://www.w3.org/2000/svg"
+width="{WIDTH}"
+height="{HEIGHT}"
+viewBox="0 0 {WIDTH} {HEIGHT}"
 >
+
 <style>
-    .background {{
-        fill: {BG};
-        stroke: {BORDER};
-        stroke-width: 1;
-    }}
 
-    .title {{
-        fill: {MUTED};
-        font-family:
-            "SFMono-Regular",
-            "Cascadia Code",
-            "Roboto Mono",
-            "Courier New",
-            monospace;
-        font-size: 13px;
-        font-weight: 600;
-    }}
+* {{
+    font-family:
+        "SFMono-Regular",
+        "Cascadia Code",
+        "Roboto Mono",
+        "Courier New",
+        monospace;
+}}
 
-    .key {{
-        font-family:
-            "SFMono-Regular",
-            "Cascadia Code",
-            "Roboto Mono",
-            "Courier New",
-            monospace;
-        font-size: 14px;
-        font-weight: 600;
-    }}
+.panel {{
+    fill: {BG};
+    stroke: {YELLOW};
+    stroke-width: 1.5;
+}}
 
-    .value {{
-        fill: {TEXT};
-        font-family:
-            "SFMono-Regular",
-            "Cascadia Code",
-            "Roboto Mono",
-            "Courier New",
-            monospace;
-        font-size: 14px;
-    }}
+.title {{
+    fill: {YELLOW};
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}}
 
-    .line {{
+.label {{
+    fill: {CYAN};
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}}
+
+.value {{
+    fill: {TEXT};
+    font-size: 15px;
+    font-weight: bold;
+}}
+
+.muted {{
+    fill: {MUTED};
+    font-size: 10px;
+}}
+
+.line {{
+    stroke: {GRID};
+    stroke-width: 1;
+}}
+
+.data {{
+    opacity: 0;
+    animation: boot 0.4s ease-out forwards;
+}}
+
+@keyframes boot {{
+    from {{
         opacity: 0;
-        transform: translateX(-8px);
-        animation: appear 0.35s ease-out forwards;
+        transform: translateX(15px);
     }}
 
-    @keyframes appear {{
-        from {{
-            opacity: 0;
-            transform: translateX(-8px);
-        }}
+    to {{
+        opacity: 1;
+        transform: translateX(0);
+    }}
+}}
 
-        to {{
-            opacity: 1;
-            transform: translateX(0);
-        }}
+.scan {{
+    fill: {CYAN};
+    opacity: 0.08;
+    animation: scan 3s linear infinite;
+}}
+
+@keyframes scan {{
+    from {{
+        transform: translateY(-420px);
     }}
 
-    @media (prefers-reduced-motion: reduce) {{
-        .line {{
-            animation: none;
-            opacity: 1;
-            transform: none;
-        }}
+    to {{
+        transform: translateY(420px);
     }}
+}}
+
 </style>
 
 <rect
-    class="background"
-    x="0.5"
-    y="0.5"
-    width="{WIDTH - 1}"
-    height="{HEIGHT - 1}"
-    rx="10"
+    class="panel"
+    x="1"
+    y="1"
+    width="{WIDTH - 2}"
+    height="{HEIGHT - 2}"
 />
 
-<circle cx="18" cy="18" r="5" fill="#ff5f56"/>
-<circle cx="35" cy="18" r="5" fill="#ffbd2e"/>
-<circle cx="52" cy="18" r="5" fill="#27c93f"/>
+<!-- corner decorations -->
+
+<path
+    d="M1 35 H18 V18"
+    fill="none"
+    stroke="{CYAN}"
+    stroke-width="2"
+/>
+
+<path
+    d="M489 35 H472 V18"
+    fill="none"
+    stroke="{MAGENTA}"
+    stroke-width="2"
+/>
+
+<path
+    d="M1 395 H18 V412"
+    fill="none"
+    stroke="{MAGENTA}"
+    stroke-width="2"
+/>
+
+<path
+    d="M489 395 H472 V412"
+    fill="none"
+    stroke="{CYAN}"
+    stroke-width="2"
+/>
+
+<!-- scanline -->
+
+<rect
+    class="scan"
+    x="0"
+    y="0"
+    width="{WIDTH}"
+    height="3"
+/>
+
+<!-- header -->
 
 <text
     class="title"
-    x="72"
-    y="22"
+    x="25"
+    y="29"
 >
-    {esc(TITLE)}
+    // IDENTITY_MODULE
+</text>
+
+<text
+    class="muted"
+    x="365"
+    y="29"
+>
+    v2.077
 </text>
 
 <line
-    x1="18"
-    y1="43"
-    x2="{WIDTH - 18}"
-    y2="43"
-    stroke="{BORDER}"
+    class="line"
+    x1="20"
+    y1="45"
+    x2="470"
+    y2="45"
 />
-'''
-    )
 
-    y = 76
+<!-- identity -->
 
-    for index, (key, value) in enumerate(ROWS):
-        delay = 0 if static else 0.55 + index * 0.12
-
-        if key:
-            key_color = COLORS[index % len(COLORS)]
-
-            lines.append(
-                f'''<g
-    class="line"
-    style="animation-delay:{delay:.2f}s"
+<g
+    class="data"
+    style="animation-delay:0.2s"
 >
-    <text
-        class="key"
-        fill="{key_color}"
-        x="24"
-        y="{y}"
-    >
-        {esc(key)}
-    </text>
 
-    <text
-        class="value"
-        x="145"
-        y="{y}"
-    >
-        {esc(value)}
-    </text>
-</g>
-'''
-            )
-        else:
-            lines.append(
-                f'''<g
-    class="line"
-    style="animation-delay:{delay:.2f}s"
->
-    <text
-        class="value"
-        x="145"
-        y="{y}"
-    >
-        {esc(value)}
-    </text>
-</g>
-'''
-            )
-
-        y += 37
-
-    lines.append(
-        f'''
 <text
-    class="title"
-    x="24"
-    y="{HEIGHT - 22}"
+    class="label"
+    x="25"
+    y="78"
 >
-    $ whoami
+    USER
+</text>
+
+<text
+    class="value"
+    x="25"
+    y="101"
+>
+    VADIM KULISHOV
+</text>
+
+<text
+    class="muted"
+    x="25"
+    y="120"
+>
+    @vadimkulishov
+</text>
+
+</g>
+
+<!-- role -->
+
+<g
+    class="data"
+    style="animation-delay:0.35s"
+>
+
+<text
+    class="label"
+    x="25"
+    y="157"
+>
+    ROLE
+</text>
+
+<text
+    class="value"
+    x="25"
+    y="180"
+>
+    FRONTEND DEVELOPER
+</text>
+
+</g>
+
+<!-- stack -->
+
+<g
+    class="data"
+    style="animation-delay:0.5s"
+>
+
+<text
+    class="label"
+    x="25"
+    y="218"
+>
+    STACK
+</text>
+
+<text
+    class="value"
+    x="25"
+    y="243"
+>
+    REACT / TYPESCRIPT / JAVASCRIPT
+</text>
+
+<text
+    class="value"
+    x="25"
+    y="267"
+>
+    HTML / CSS
+</text>
+
+</g>
+
+<!-- status -->
+
+<g
+    class="data"
+    style="animation-delay:0.65s"
+>
+
+<text
+    class="label"
+    x="25"
+    y="307"
+>
+    SYSTEM STATUS
+</text>
+
+<circle
+    cx="29"
+    cy="330"
+    r="5"
+    fill="{YELLOW}"
+/>
+
+<text
+    class="value"
+    x="45"
+    y="335"
+>
+    ONLINE
+</text>
+
+<text
+    class="muted"
+    x="25"
+    y="360"
+>
+    CONNECTION: SECURE
+</text>
+
+</g>
+
+<!-- footer -->
+
+<line
+    class="line"
+    x1="20"
+    y1="385"
+    x2="470"
+    y2="385"
+/>
+
+<text
+    class="muted"
+    x="25"
+    y="407"
+>
+    NIGHT CITY // LOCAL NODE
+</text>
+
+<text
+    class="muted"
+    x="360"
+    y="407"
+>
+    2077
 </text>
 
 </svg>
 '''
-    )
 
     OUTPUT.write_text(
-        "\n".join(lines),
+        svg,
         encoding="utf-8",
     )
 
-    print(f"Done: {OUTPUT}")
+    print(f"Generated: {OUTPUT}")
 
 
 if __name__ == "__main__":
-    create_svg()
+    main()

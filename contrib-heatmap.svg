@@ -1,49 +1,54 @@
 <svg
 xmlns="http://www.w3.org/2000/svg"
-width="860"
-height="180"
-viewBox="0 0 860 180"
+width="920"
+height="205"
+viewBox="0 0 920 205"
 role="img"
-aria-label="GitHub contribution heatmap for vadimkulishov"
+aria-label="Cyberpunk GitHub contribution activity for vadimkulishov"
 >
 
 <style>
 
+* {
+    font-family:
+        "SFMono-Regular",
+        "Cascadia Code",
+        "Roboto Mono",
+        "Courier New",
+        monospace;
+}
+
 .background {
-    fill: #0d1117;
-    stroke: #30363d;
-    stroke-width: 1;
+    fill: #050509;
+    stroke: #fcee0a;
+    stroke-width: 1.5;
 }
 
 .title {
-    fill: #c9d1d9;
-    font-family:
-        "SFMono-Regular",
-        "Cascadia Code",
-        "Roboto Mono",
-        "Courier New",
-        monospace;
-
-    font-size: 14px;
-    font-weight: 600;
+    fill: #fcee0a;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
 .subtitle {
-    fill: #8b949e;
-    font-family:
-        "SFMono-Regular",
-        "Cascadia Code",
-        "Roboto Mono",
-        "Courier New",
-        monospace;
+    fill: #777b85;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
 
-    font-size: 11px;
+.footer {
+    fill: #e8e8e8;
+    font-size: 10px;
+    letter-spacing: 0.5px;
 }
 
 .cell {
     opacity: 0;
+
     transform-box: fill-box;
     transform-origin: center;
+
     animation:
         reveal 0.35s ease-out forwards;
 }
@@ -52,16 +57,58 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 
     from {
         opacity: 0;
+
         transform:
-            translate(-10px, -10px)
-            scale(0.65);
+            translate(-8px, -8px)
+            scale(0.6);
     }
 
     to {
         opacity: 1;
+
         transform:
             translate(0, 0)
             scale(1);
+    }
+
+}
+
+.scanline {
+    opacity: 0.08;
+
+    animation:
+        scan 4s linear infinite;
+}
+
+@keyframes scan {
+
+    from {
+        transform: translateY(-20px);
+    }
+
+    to {
+        transform: translateY(220px);
+    }
+
+}
+
+.pulse {
+    animation:
+        pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0% {
+        opacity: 0.35;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.35;
     }
 
 }
@@ -73,44 +120,132 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
         opacity: 1;
     }
 
+    .scanline {
+        animation: none;
+    }
+
+    .pulse {
+        animation: none;
+        opacity: 1;
+    }
+
 }
 
 </style>
 
+
 <rect
     class="background"
-    x="0.5"
-    y="0.5"
-    width="859"
-    height="179"
-    rx="10"
+    x="1"
+    y="1"
+    width="918"
+    height="203"
+    rx="4"
 />
+
+
+<path
+    d="M1 35 H22 L32 25 H110"
+    fill="none"
+    stroke="#00f0ff"
+    stroke-width="2"
+/>
+
+
+<path
+    d="M810 25 H888 L898 35 H919"
+    fill="none"
+    stroke="#ff2a6d"
+    stroke-width="2"
+/>
+
+
+<path
+    d="M1 175 H22 L32 185 H110"
+    fill="none"
+    stroke="#ff2a6d"
+    stroke-width="2"
+/>
+
+
+<path
+    d="M810 185 H888 L898 175 H919"
+    fill="none"
+    stroke="#00f0ff"
+    stroke-width="2"
+/>
+
 
 <text
     class="title"
-    x="24"
-    y="23"
+    x="28"
+    y="25"
 >
-    $ git log --activity
+    // NET_ACTIVITY
 </text>
 
 <text
     class="subtitle"
-    x="24"
-    y="39"
+    x="28"
+    y="42"
 >
-    107 contributions in the last year
+    107 CONTRIBUTIONS // LAST 365 DAYS
 </text>
+
+<circle
+    class="pulse"
+    cx="760"
+    cy="20"
+    r="4"
+    fill="#fcee0a"
+/>
+
+<text
+    class="subtitle"
+    x="772"
+    y="24"
+>
+    NODE: ONLINE
+</text>
+
+
+<line
+    x1="28"
+    y1="47"
+    x2="892"
+    y2="47"
+    stroke="#24262d"
+    stroke-width="1"
+/>
+
+<line
+    x1="715"
+    y1="30"
+    x2="892"
+    y2="30"
+    stroke="#24262d"
+    stroke-width="1"
+/>
+
+
+<rect
+    class="scanline"
+    x="0"
+    y="0"
+    width="920"
+    height="2"
+    fill="#00f0ff"
+/>
 
 
 <rect
     class="cell"
     x="28"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.000s"
 >
     <title>0 contributions on 2025-08-17</title>
@@ -120,11 +255,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="28"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.025s"
 >
     <title>0 contributions on 2025-08-18</title>
@@ -134,11 +269,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="28"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.050s"
 >
     <title>0 contributions on 2025-08-19</title>
@@ -148,11 +283,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="28"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.075s"
 >
     <title>0 contributions on 2025-08-20</title>
@@ -162,11 +297,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="28"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.100s"
 >
     <title>0 contributions on 2025-08-21</title>
@@ -176,11 +311,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="28"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.125s"
 >
     <title>0 contributions on 2025-08-22</title>
@@ -190,11 +325,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="28"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.150s"
 >
     <title>0 contributions on 2025-08-23</title>
@@ -204,11 +339,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="44"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.018s"
 >
     <title>0 contributions on 2025-08-24</title>
@@ -218,11 +353,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="44"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.043s"
 >
     <title>0 contributions on 2025-08-25</title>
@@ -232,11 +367,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="44"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.068s"
 >
     <title>0 contributions on 2025-08-26</title>
@@ -246,11 +381,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="44"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.093s"
 >
     <title>0 contributions on 2025-08-27</title>
@@ -260,11 +395,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="44"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.118s"
 >
     <title>0 contributions on 2025-08-28</title>
@@ -274,11 +409,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="44"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.143s"
 >
     <title>0 contributions on 2025-08-29</title>
@@ -288,11 +423,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="44"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.168s"
 >
     <title>0 contributions on 2025-08-30</title>
@@ -302,11 +437,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="60"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.036s"
 >
     <title>0 contributions on 2025-08-31</title>
@@ -316,11 +451,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="60"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.061s"
 >
     <title>0 contributions on 2025-09-01</title>
@@ -330,11 +465,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="60"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.086s"
 >
     <title>0 contributions on 2025-09-02</title>
@@ -344,11 +479,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="60"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.111s"
 >
     <title>0 contributions on 2025-09-03</title>
@@ -358,11 +493,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="60"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.136s"
 >
     <title>0 contributions on 2025-09-04</title>
@@ -372,11 +507,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="60"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.161s"
 >
     <title>0 contributions on 2025-09-05</title>
@@ -386,11 +521,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="60"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.186s"
 >
     <title>0 contributions on 2025-09-06</title>
@@ -400,11 +535,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="76"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.054s"
 >
     <title>0 contributions on 2025-09-07</title>
@@ -414,11 +549,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="76"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.079s"
 >
     <title>0 contributions on 2025-09-08</title>
@@ -428,11 +563,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="76"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.104s"
 >
     <title>0 contributions on 2025-09-09</title>
@@ -442,11 +577,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="76"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.129s"
 >
     <title>0 contributions on 2025-09-10</title>
@@ -456,11 +591,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="76"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.154s"
 >
     <title>0 contributions on 2025-09-11</title>
@@ -470,11 +605,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="76"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.179s"
 >
     <title>0 contributions on 2025-09-12</title>
@@ -484,11 +619,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="76"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.204s"
 >
     <title>0 contributions on 2025-09-13</title>
@@ -498,11 +633,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="92"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.072s"
 >
     <title>0 contributions on 2025-09-14</title>
@@ -512,11 +647,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="92"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.097s"
 >
     <title>0 contributions on 2025-09-15</title>
@@ -526,11 +661,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="92"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.122s"
 >
     <title>0 contributions on 2025-09-16</title>
@@ -540,11 +675,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="92"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.147s"
 >
     <title>0 contributions on 2025-09-17</title>
@@ -554,11 +689,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="92"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.172s"
 >
     <title>0 contributions on 2025-09-18</title>
@@ -568,11 +703,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="92"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.197s"
 >
     <title>0 contributions on 2025-09-19</title>
@@ -582,11 +717,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="92"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.222s"
 >
     <title>0 contributions on 2025-09-20</title>
@@ -596,11 +731,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="108"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.090s"
 >
     <title>0 contributions on 2025-09-21</title>
@@ -610,11 +745,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="108"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.115s"
 >
     <title>0 contributions on 2025-09-22</title>
@@ -624,11 +759,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="108"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.140s"
 >
     <title>0 contributions on 2025-09-23</title>
@@ -638,11 +773,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="108"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.165s"
 >
     <title>0 contributions on 2025-09-24</title>
@@ -652,11 +787,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="108"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.190s"
 >
     <title>0 contributions on 2025-09-25</title>
@@ -666,11 +801,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="108"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.215s"
 >
     <title>0 contributions on 2025-09-26</title>
@@ -680,11 +815,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="108"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.240s"
 >
     <title>0 contributions on 2025-09-27</title>
@@ -694,11 +829,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="124"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.108s"
 >
     <title>0 contributions on 2025-09-28</title>
@@ -708,11 +843,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="124"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.133s"
 >
     <title>0 contributions on 2025-09-29</title>
@@ -722,11 +857,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="124"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.158s"
 >
     <title>0 contributions on 2025-09-30</title>
@@ -736,11 +871,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="124"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.183s"
 >
     <title>0 contributions on 2025-10-01</title>
@@ -750,11 +885,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="124"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.208s"
 >
     <title>0 contributions on 2025-10-02</title>
@@ -764,11 +899,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="124"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.233s"
 >
     <title>0 contributions on 2025-10-03</title>
@@ -778,11 +913,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="124"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.258s"
 >
     <title>0 contributions on 2025-10-04</title>
@@ -792,11 +927,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="140"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.126s"
 >
     <title>0 contributions on 2025-10-05</title>
@@ -806,11 +941,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="140"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.151s"
 >
     <title>0 contributions on 2025-10-06</title>
@@ -820,11 +955,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="140"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.176s"
 >
     <title>0 contributions on 2025-10-07</title>
@@ -834,11 +969,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="140"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.201s"
 >
     <title>0 contributions on 2025-10-08</title>
@@ -848,11 +983,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="140"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.226s"
 >
     <title>0 contributions on 2025-10-09</title>
@@ -862,11 +997,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="140"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.251s"
 >
     <title>0 contributions on 2025-10-10</title>
@@ -876,11 +1011,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="140"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.276s"
 >
     <title>0 contributions on 2025-10-11</title>
@@ -890,11 +1025,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="156"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.144s"
 >
     <title>0 contributions on 2025-10-12</title>
@@ -904,11 +1039,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="156"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.169s"
 >
     <title>0 contributions on 2025-10-13</title>
@@ -918,11 +1053,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="156"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.194s"
 >
     <title>0 contributions on 2025-10-14</title>
@@ -932,11 +1067,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="156"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.219s"
 >
     <title>0 contributions on 2025-10-15</title>
@@ -946,11 +1081,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="156"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.244s"
 >
     <title>0 contributions on 2025-10-16</title>
@@ -960,11 +1095,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="156"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.269s"
 >
     <title>0 contributions on 2025-10-17</title>
@@ -974,11 +1109,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="156"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.294s"
 >
     <title>0 contributions on 2025-10-18</title>
@@ -988,11 +1123,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="172"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.162s"
 >
     <title>0 contributions on 2025-10-19</title>
@@ -1002,11 +1137,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="172"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.187s"
 >
     <title>0 contributions on 2025-10-20</title>
@@ -1016,11 +1151,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="172"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.212s"
 >
     <title>0 contributions on 2025-10-21</title>
@@ -1030,11 +1165,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="172"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#0e4429"
+    rx="2"
+    fill="#17343a"
     style="animation-delay:0.237s"
 >
     <title>1 contribution on 2025-10-22</title>
@@ -1044,11 +1179,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="172"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.262s"
 >
     <title>0 contributions on 2025-10-23</title>
@@ -1058,11 +1193,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="172"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.287s"
 >
     <title>0 contributions on 2025-10-24</title>
@@ -1072,11 +1207,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="172"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.312s"
 >
     <title>0 contributions on 2025-10-25</title>
@@ -1086,11 +1221,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="188"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.180s"
 >
     <title>0 contributions on 2025-10-26</title>
@@ -1100,11 +1235,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="188"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.205s"
 >
     <title>0 contributions on 2025-10-27</title>
@@ -1114,11 +1249,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="188"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.230s"
 >
     <title>0 contributions on 2025-10-28</title>
@@ -1128,11 +1263,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="188"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.255s"
 >
     <title>0 contributions on 2025-10-29</title>
@@ -1142,11 +1277,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="188"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.280s"
 >
     <title>0 contributions on 2025-10-30</title>
@@ -1156,11 +1291,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="188"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.305s"
 >
     <title>0 contributions on 2025-10-31</title>
@@ -1170,11 +1305,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="188"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.330s"
 >
     <title>0 contributions on 2025-11-01</title>
@@ -1184,11 +1319,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="204"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.198s"
 >
     <title>0 contributions on 2025-11-02</title>
@@ -1198,11 +1333,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="204"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.223s"
 >
     <title>0 contributions on 2025-11-03</title>
@@ -1212,11 +1347,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="204"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.248s"
 >
     <title>0 contributions on 2025-11-04</title>
@@ -1226,11 +1361,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="204"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.273s"
 >
     <title>0 contributions on 2025-11-05</title>
@@ -1240,11 +1375,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="204"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.298s"
 >
     <title>0 contributions on 2025-11-06</title>
@@ -1254,11 +1389,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="204"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.323s"
 >
     <title>0 contributions on 2025-11-07</title>
@@ -1268,11 +1403,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="204"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.348s"
 >
     <title>0 contributions on 2025-11-08</title>
@@ -1282,11 +1417,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="220"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.216s"
 >
     <title>0 contributions on 2025-11-09</title>
@@ -1296,11 +1431,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="220"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.241s"
 >
     <title>0 contributions on 2025-11-10</title>
@@ -1310,11 +1445,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="220"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.266s"
 >
     <title>0 contributions on 2025-11-11</title>
@@ -1324,11 +1459,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="220"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.291s"
 >
     <title>0 contributions on 2025-11-12</title>
@@ -1338,11 +1473,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="220"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.316s"
 >
     <title>0 contributions on 2025-11-13</title>
@@ -1352,11 +1487,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="220"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.341s"
 >
     <title>0 contributions on 2025-11-14</title>
@@ -1366,11 +1501,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="220"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.366s"
 >
     <title>0 contributions on 2025-11-15</title>
@@ -1380,11 +1515,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="236"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.234s"
 >
     <title>0 contributions on 2025-11-16</title>
@@ -1394,11 +1529,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="236"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.259s"
 >
     <title>0 contributions on 2025-11-17</title>
@@ -1408,11 +1543,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="236"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.284s"
 >
     <title>0 contributions on 2025-11-18</title>
@@ -1422,11 +1557,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="236"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.309s"
 >
     <title>0 contributions on 2025-11-19</title>
@@ -1436,11 +1571,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="236"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.334s"
 >
     <title>0 contributions on 2025-11-20</title>
@@ -1450,11 +1585,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="236"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.359s"
 >
     <title>0 contributions on 2025-11-21</title>
@@ -1464,11 +1599,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="236"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.384s"
 >
     <title>0 contributions on 2025-11-22</title>
@@ -1478,11 +1613,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="252"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.252s"
 >
     <title>0 contributions on 2025-11-23</title>
@@ -1492,11 +1627,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="252"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.277s"
 >
     <title>0 contributions on 2025-11-24</title>
@@ -1506,11 +1641,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="252"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.302s"
 >
     <title>0 contributions on 2025-11-25</title>
@@ -1520,11 +1655,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="252"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.327s"
 >
     <title>0 contributions on 2025-11-26</title>
@@ -1534,11 +1669,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="252"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.352s"
 >
     <title>0 contributions on 2025-11-27</title>
@@ -1548,11 +1683,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="252"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.377s"
 >
     <title>0 contributions on 2025-11-28</title>
@@ -1562,11 +1697,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="252"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.402s"
 >
     <title>0 contributions on 2025-11-29</title>
@@ -1576,11 +1711,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="268"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.270s"
 >
     <title>0 contributions on 2025-11-30</title>
@@ -1590,11 +1725,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="268"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.295s"
 >
     <title>0 contributions on 2025-12-01</title>
@@ -1604,11 +1739,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="268"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.320s"
 >
     <title>0 contributions on 2025-12-02</title>
@@ -1618,11 +1753,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="268"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.345s"
 >
     <title>0 contributions on 2025-12-03</title>
@@ -1632,11 +1767,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="268"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.370s"
 >
     <title>0 contributions on 2025-12-04</title>
@@ -1646,11 +1781,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="268"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.395s"
 >
     <title>0 contributions on 2025-12-05</title>
@@ -1660,11 +1795,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="268"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.420s"
 >
     <title>0 contributions on 2025-12-06</title>
@@ -1674,11 +1809,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="284"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.288s"
 >
     <title>0 contributions on 2025-12-07</title>
@@ -1688,11 +1823,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="284"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.313s"
 >
     <title>0 contributions on 2025-12-08</title>
@@ -1702,11 +1837,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="284"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.338s"
 >
     <title>0 contributions on 2025-12-09</title>
@@ -1716,11 +1851,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="284"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.363s"
 >
     <title>0 contributions on 2025-12-10</title>
@@ -1730,11 +1865,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="284"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.388s"
 >
     <title>0 contributions on 2025-12-11</title>
@@ -1744,11 +1879,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="284"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.413s"
 >
     <title>0 contributions on 2025-12-12</title>
@@ -1758,11 +1893,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="284"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.438s"
 >
     <title>0 contributions on 2025-12-13</title>
@@ -1772,11 +1907,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="300"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.306s"
 >
     <title>0 contributions on 2025-12-14</title>
@@ -1786,11 +1921,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="300"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.331s"
 >
     <title>0 contributions on 2025-12-15</title>
@@ -1800,11 +1935,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="300"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.356s"
 >
     <title>0 contributions on 2025-12-16</title>
@@ -1814,11 +1949,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="300"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.381s"
 >
     <title>0 contributions on 2025-12-17</title>
@@ -1828,11 +1963,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="300"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.406s"
 >
     <title>0 contributions on 2025-12-18</title>
@@ -1842,11 +1977,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="300"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.431s"
 >
     <title>0 contributions on 2025-12-19</title>
@@ -1856,11 +1991,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="300"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.456s"
 >
     <title>0 contributions on 2025-12-20</title>
@@ -1870,11 +2005,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="316"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.324s"
 >
     <title>0 contributions on 2025-12-21</title>
@@ -1884,11 +2019,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="316"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#006d32"
+    rx="2"
+    fill="#006b73"
     style="animation-delay:0.349s"
 >
     <title>2 contributions on 2025-12-22</title>
@@ -1898,11 +2033,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="316"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.374s"
 >
     <title>0 contributions on 2025-12-23</title>
@@ -1912,11 +2047,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="316"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.399s"
 >
     <title>0 contributions on 2025-12-24</title>
@@ -1926,11 +2061,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="316"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.424s"
 >
     <title>0 contributions on 2025-12-25</title>
@@ -1940,11 +2075,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="316"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.449s"
 >
     <title>0 contributions on 2025-12-26</title>
@@ -1954,11 +2089,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="316"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.474s"
 >
     <title>0 contributions on 2025-12-27</title>
@@ -1968,11 +2103,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="332"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.342s"
 >
     <title>0 contributions on 2025-12-28</title>
@@ -1982,11 +2117,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="332"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.367s"
 >
     <title>0 contributions on 2025-12-29</title>
@@ -1996,11 +2131,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="332"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.392s"
 >
     <title>0 contributions on 2025-12-30</title>
@@ -2010,11 +2145,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="332"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.417s"
 >
     <title>0 contributions on 2025-12-31</title>
@@ -2024,11 +2159,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="332"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.442s"
 >
     <title>0 contributions on 2026-01-01</title>
@@ -2038,11 +2173,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="332"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.467s"
 >
     <title>0 contributions on 2026-01-02</title>
@@ -2052,11 +2187,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="332"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.492s"
 >
     <title>0 contributions on 2026-01-03</title>
@@ -2066,11 +2201,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="348"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.360s"
 >
     <title>0 contributions on 2026-01-04</title>
@@ -2080,11 +2215,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="348"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.385s"
 >
     <title>0 contributions on 2026-01-05</title>
@@ -2094,11 +2229,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="348"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.410s"
 >
     <title>0 contributions on 2026-01-06</title>
@@ -2108,11 +2243,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="348"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.435s"
 >
     <title>0 contributions on 2026-01-07</title>
@@ -2122,11 +2257,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="348"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.460s"
 >
     <title>0 contributions on 2026-01-08</title>
@@ -2136,11 +2271,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="348"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.485s"
 >
     <title>0 contributions on 2026-01-09</title>
@@ -2150,11 +2285,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="348"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.510s"
 >
     <title>0 contributions on 2026-01-10</title>
@@ -2164,11 +2299,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="364"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.378s"
 >
     <title>0 contributions on 2026-01-11</title>
@@ -2178,11 +2313,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="364"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.403s"
 >
     <title>0 contributions on 2026-01-12</title>
@@ -2192,11 +2327,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="364"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.428s"
 >
     <title>0 contributions on 2026-01-13</title>
@@ -2206,11 +2341,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="364"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.453s"
 >
     <title>0 contributions on 2026-01-14</title>
@@ -2220,11 +2355,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="364"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.478s"
 >
     <title>0 contributions on 2026-01-15</title>
@@ -2234,11 +2369,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="364"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.503s"
 >
     <title>0 contributions on 2026-01-16</title>
@@ -2248,11 +2383,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="364"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.528s"
 >
     <title>0 contributions on 2026-01-17</title>
@@ -2262,11 +2397,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="380"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.396s"
 >
     <title>0 contributions on 2026-01-18</title>
@@ -2276,11 +2411,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="380"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.421s"
 >
     <title>0 contributions on 2026-01-19</title>
@@ -2290,11 +2425,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="380"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#006d32"
+    rx="2"
+    fill="#006b73"
     style="animation-delay:0.446s"
 >
     <title>2 contributions on 2026-01-20</title>
@@ -2304,11 +2439,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="380"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#0e4429"
+    rx="2"
+    fill="#17343a"
     style="animation-delay:0.471s"
 >
     <title>1 contribution on 2026-01-21</title>
@@ -2318,11 +2453,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="380"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.496s"
 >
     <title>0 contributions on 2026-01-22</title>
@@ -2332,11 +2467,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="380"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.521s"
 >
     <title>0 contributions on 2026-01-23</title>
@@ -2346,11 +2481,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="380"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.546s"
 >
     <title>0 contributions on 2026-01-24</title>
@@ -2360,11 +2495,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="396"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.414s"
 >
     <title>0 contributions on 2026-01-25</title>
@@ -2374,11 +2509,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="396"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#0e4429"
+    rx="2"
+    fill="#17343a"
     style="animation-delay:0.439s"
 >
     <title>1 contribution on 2026-01-26</title>
@@ -2388,11 +2523,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="396"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#39d353"
+    rx="2"
+    fill="#fcee0a"
     style="animation-delay:0.464s"
 >
     <title>8 contributions on 2026-01-27</title>
@@ -2402,11 +2537,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="396"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.489s"
 >
     <title>0 contributions on 2026-01-28</title>
@@ -2416,11 +2551,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="396"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#0e4429"
+    rx="2"
+    fill="#17343a"
     style="animation-delay:0.514s"
 >
     <title>1 contribution on 2026-01-29</title>
@@ -2430,11 +2565,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="396"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.539s"
 >
     <title>0 contributions on 2026-01-30</title>
@@ -2444,11 +2579,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="396"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#26a641"
+    rx="2"
+    fill="#00c9d7"
     style="animation-delay:0.564s"
 >
     <title>5 contributions on 2026-01-31</title>
@@ -2458,11 +2593,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="412"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.432s"
 >
     <title>0 contributions on 2026-02-01</title>
@@ -2472,11 +2607,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="412"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.457s"
 >
     <title>0 contributions on 2026-02-02</title>
@@ -2486,11 +2621,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="412"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.482s"
 >
     <title>0 contributions on 2026-02-03</title>
@@ -2500,11 +2635,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="412"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.507s"
 >
     <title>0 contributions on 2026-02-04</title>
@@ -2514,11 +2649,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="412"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.532s"
 >
     <title>0 contributions on 2026-02-05</title>
@@ -2528,11 +2663,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="412"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.557s"
 >
     <title>0 contributions on 2026-02-06</title>
@@ -2542,11 +2677,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="412"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.582s"
 >
     <title>0 contributions on 2026-02-07</title>
@@ -2556,11 +2691,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="428"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.450s"
 >
     <title>0 contributions on 2026-02-08</title>
@@ -2570,11 +2705,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="428"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.475s"
 >
     <title>0 contributions on 2026-02-09</title>
@@ -2584,11 +2719,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="428"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.500s"
 >
     <title>0 contributions on 2026-02-10</title>
@@ -2598,11 +2733,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="428"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.525s"
 >
     <title>0 contributions on 2026-02-11</title>
@@ -2612,11 +2747,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="428"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.550s"
 >
     <title>0 contributions on 2026-02-12</title>
@@ -2626,11 +2761,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="428"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#0e4429"
+    rx="2"
+    fill="#17343a"
     style="animation-delay:0.575s"
 >
     <title>1 contribution on 2026-02-13</title>
@@ -2640,11 +2775,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="428"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.600s"
 >
     <title>0 contributions on 2026-02-14</title>
@@ -2654,11 +2789,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="444"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#0e4429"
+    rx="2"
+    fill="#17343a"
     style="animation-delay:0.468s"
 >
     <title>1 contribution on 2026-02-15</title>
@@ -2668,11 +2803,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="444"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.493s"
 >
     <title>0 contributions on 2026-02-16</title>
@@ -2682,11 +2817,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="444"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.518s"
 >
     <title>0 contributions on 2026-02-17</title>
@@ -2696,11 +2831,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="444"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.543s"
 >
     <title>0 contributions on 2026-02-18</title>
@@ -2710,11 +2845,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="444"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.568s"
 >
     <title>0 contributions on 2026-02-19</title>
@@ -2724,11 +2859,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="444"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.593s"
 >
     <title>0 contributions on 2026-02-20</title>
@@ -2738,11 +2873,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="444"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.618s"
 >
     <title>0 contributions on 2026-02-21</title>
@@ -2752,11 +2887,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="460"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.486s"
 >
     <title>0 contributions on 2026-02-22</title>
@@ -2766,11 +2901,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="460"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.511s"
 >
     <title>0 contributions on 2026-02-23</title>
@@ -2780,11 +2915,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="460"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.536s"
 >
     <title>0 contributions on 2026-02-24</title>
@@ -2794,11 +2929,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="460"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.561s"
 >
     <title>0 contributions on 2026-02-25</title>
@@ -2808,11 +2943,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="460"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#006d32"
+    rx="2"
+    fill="#006b73"
     style="animation-delay:0.586s"
 >
     <title>3 contributions on 2026-02-26</title>
@@ -2822,11 +2957,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="460"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.611s"
 >
     <title>0 contributions on 2026-02-27</title>
@@ -2836,11 +2971,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="460"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#006d32"
+    rx="2"
+    fill="#006b73"
     style="animation-delay:0.636s"
 >
     <title>3 contributions on 2026-02-28</title>
@@ -2850,11 +2985,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="476"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.504s"
 >
     <title>0 contributions on 2026-03-01</title>
@@ -2864,11 +2999,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="476"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#0e4429"
+    rx="2"
+    fill="#17343a"
     style="animation-delay:0.529s"
 >
     <title>1 contribution on 2026-03-02</title>
@@ -2878,11 +3013,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="476"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#006d32"
+    rx="2"
+    fill="#006b73"
     style="animation-delay:0.554s"
 >
     <title>3 contributions on 2026-03-03</title>
@@ -2892,11 +3027,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="476"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#39d353"
+    rx="2"
+    fill="#fcee0a"
     style="animation-delay:0.579s"
 >
     <title>7 contributions on 2026-03-04</title>
@@ -2906,11 +3041,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="476"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.604s"
 >
     <title>0 contributions on 2026-03-05</title>
@@ -2920,11 +3055,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="476"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.629s"
 >
     <title>0 contributions on 2026-03-06</title>
@@ -2934,11 +3069,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="476"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.654s"
 >
     <title>0 contributions on 2026-03-07</title>
@@ -2948,11 +3083,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="492"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.522s"
 >
     <title>0 contributions on 2026-03-08</title>
@@ -2962,11 +3097,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="492"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.547s"
 >
     <title>0 contributions on 2026-03-09</title>
@@ -2976,11 +3111,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="492"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.572s"
 >
     <title>0 contributions on 2026-03-10</title>
@@ -2990,11 +3125,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="492"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.597s"
 >
     <title>0 contributions on 2026-03-11</title>
@@ -3004,11 +3139,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="492"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.622s"
 >
     <title>0 contributions on 2026-03-12</title>
@@ -3018,11 +3153,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="492"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.647s"
 >
     <title>0 contributions on 2026-03-13</title>
@@ -3032,11 +3167,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="492"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.672s"
 >
     <title>0 contributions on 2026-03-14</title>
@@ -3046,11 +3181,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="508"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.540s"
 >
     <title>0 contributions on 2026-03-15</title>
@@ -3060,11 +3195,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="508"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.565s"
 >
     <title>0 contributions on 2026-03-16</title>
@@ -3074,11 +3209,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="508"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.590s"
 >
     <title>0 contributions on 2026-03-17</title>
@@ -3088,11 +3223,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="508"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.615s"
 >
     <title>0 contributions on 2026-03-18</title>
@@ -3102,11 +3237,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="508"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#0e4429"
+    rx="2"
+    fill="#17343a"
     style="animation-delay:0.640s"
 >
     <title>1 contribution on 2026-03-19</title>
@@ -3116,11 +3251,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="508"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#26a641"
+    rx="2"
+    fill="#00c9d7"
     style="animation-delay:0.665s"
 >
     <title>4 contributions on 2026-03-20</title>
@@ -3130,11 +3265,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="508"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.690s"
 >
     <title>0 contributions on 2026-03-21</title>
@@ -3144,11 +3279,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="524"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#006d32"
+    rx="2"
+    fill="#006b73"
     style="animation-delay:0.558s"
 >
     <title>3 contributions on 2026-03-22</title>
@@ -3158,11 +3293,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="524"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.583s"
 >
     <title>0 contributions on 2026-03-23</title>
@@ -3172,11 +3307,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="524"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.608s"
 >
     <title>0 contributions on 2026-03-24</title>
@@ -3186,11 +3321,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="524"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.633s"
 >
     <title>0 contributions on 2026-03-25</title>
@@ -3200,11 +3335,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="524"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.658s"
 >
     <title>0 contributions on 2026-03-26</title>
@@ -3214,11 +3349,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="524"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.683s"
 >
     <title>0 contributions on 2026-03-27</title>
@@ -3228,11 +3363,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="524"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.708s"
 >
     <title>0 contributions on 2026-03-28</title>
@@ -3242,11 +3377,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="540"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.576s"
 >
     <title>0 contributions on 2026-03-29</title>
@@ -3256,11 +3391,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="540"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#39d353"
+    rx="2"
+    fill="#fcee0a"
     style="animation-delay:0.601s"
 >
     <title>10 contributions on 2026-03-30</title>
@@ -3270,11 +3405,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="540"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.626s"
 >
     <title>0 contributions on 2026-03-31</title>
@@ -3284,11 +3419,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="540"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#39d353"
+    rx="2"
+    fill="#fcee0a"
     style="animation-delay:0.651s"
 >
     <title>8 contributions on 2026-04-01</title>
@@ -3298,11 +3433,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="540"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.676s"
 >
     <title>0 contributions on 2026-04-02</title>
@@ -3312,11 +3447,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="540"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.701s"
 >
     <title>0 contributions on 2026-04-03</title>
@@ -3326,11 +3461,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="540"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.726s"
 >
     <title>0 contributions on 2026-04-04</title>
@@ -3340,11 +3475,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="556"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.594s"
 >
     <title>0 contributions on 2026-04-05</title>
@@ -3354,11 +3489,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="556"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.619s"
 >
     <title>0 contributions on 2026-04-06</title>
@@ -3368,11 +3503,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="556"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.644s"
 >
     <title>0 contributions on 2026-04-07</title>
@@ -3382,11 +3517,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="556"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.669s"
 >
     <title>0 contributions on 2026-04-08</title>
@@ -3396,11 +3531,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="556"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.694s"
 >
     <title>0 contributions on 2026-04-09</title>
@@ -3410,11 +3545,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="556"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.719s"
 >
     <title>0 contributions on 2026-04-10</title>
@@ -3424,11 +3559,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="556"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.744s"
 >
     <title>0 contributions on 2026-04-11</title>
@@ -3438,11 +3573,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="572"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.612s"
 >
     <title>0 contributions on 2026-04-12</title>
@@ -3452,11 +3587,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="572"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.637s"
 >
     <title>0 contributions on 2026-04-13</title>
@@ -3466,11 +3601,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="572"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.662s"
 >
     <title>0 contributions on 2026-04-14</title>
@@ -3480,11 +3615,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="572"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.687s"
 >
     <title>0 contributions on 2026-04-15</title>
@@ -3494,11 +3629,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="572"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.712s"
 >
     <title>0 contributions on 2026-04-16</title>
@@ -3508,11 +3643,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="572"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.737s"
 >
     <title>0 contributions on 2026-04-17</title>
@@ -3522,11 +3657,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="572"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#006d32"
+    rx="2"
+    fill="#006b73"
     style="animation-delay:0.762s"
 >
     <title>3 contributions on 2026-04-18</title>
@@ -3536,11 +3671,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="588"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.630s"
 >
     <title>0 contributions on 2026-04-19</title>
@@ -3550,11 +3685,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="588"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.655s"
 >
     <title>0 contributions on 2026-04-20</title>
@@ -3564,11 +3699,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="588"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.680s"
 >
     <title>0 contributions on 2026-04-21</title>
@@ -3578,11 +3713,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="588"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.705s"
 >
     <title>0 contributions on 2026-04-22</title>
@@ -3592,11 +3727,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="588"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#39d353"
+    rx="2"
+    fill="#fcee0a"
     style="animation-delay:0.730s"
 >
     <title>27 contributions on 2026-04-23</title>
@@ -3606,11 +3741,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="588"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.755s"
 >
     <title>0 contributions on 2026-04-24</title>
@@ -3620,11 +3755,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="588"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.780s"
 >
     <title>0 contributions on 2026-04-25</title>
@@ -3634,11 +3769,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="604"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.648s"
 >
     <title>0 contributions on 2026-04-26</title>
@@ -3648,11 +3783,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="604"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#006d32"
+    rx="2"
+    fill="#006b73"
     style="animation-delay:0.673s"
 >
     <title>2 contributions on 2026-04-27</title>
@@ -3662,11 +3797,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="604"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.698s"
 >
     <title>0 contributions on 2026-04-28</title>
@@ -3676,11 +3811,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="604"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.723s"
 >
     <title>0 contributions on 2026-04-29</title>
@@ -3690,11 +3825,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="604"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.748s"
 >
     <title>0 contributions on 2026-04-30</title>
@@ -3704,11 +3839,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="604"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#006d32"
+    rx="2"
+    fill="#006b73"
     style="animation-delay:0.773s"
 >
     <title>3 contributions on 2026-05-01</title>
@@ -3718,11 +3853,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="604"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#006d32"
+    rx="2"
+    fill="#006b73"
     style="animation-delay:0.798s"
 >
     <title>3 contributions on 2026-05-02</title>
@@ -3732,11 +3867,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="620"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.666s"
 >
     <title>0 contributions on 2026-05-03</title>
@@ -3746,11 +3881,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="620"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.691s"
 >
     <title>0 contributions on 2026-05-04</title>
@@ -3760,11 +3895,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="620"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.716s"
 >
     <title>0 contributions on 2026-05-05</title>
@@ -3774,11 +3909,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="620"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.741s"
 >
     <title>0 contributions on 2026-05-06</title>
@@ -3788,11 +3923,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="620"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.766s"
 >
     <title>0 contributions on 2026-05-07</title>
@@ -3802,11 +3937,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="620"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.791s"
 >
     <title>0 contributions on 2026-05-08</title>
@@ -3816,11 +3951,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="620"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.816s"
 >
     <title>0 contributions on 2026-05-09</title>
@@ -3830,11 +3965,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="636"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#006d32"
+    rx="2"
+    fill="#006b73"
     style="animation-delay:0.684s"
 >
     <title>2 contributions on 2026-05-10</title>
@@ -3844,11 +3979,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="636"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.709s"
 >
     <title>0 contributions on 2026-05-11</title>
@@ -3858,11 +3993,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="636"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.734s"
 >
     <title>0 contributions on 2026-05-12</title>
@@ -3872,11 +4007,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="636"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.759s"
 >
     <title>0 contributions on 2026-05-13</title>
@@ -3886,11 +4021,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="636"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.784s"
 >
     <title>0 contributions on 2026-05-14</title>
@@ -3900,11 +4035,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="636"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.809s"
 >
     <title>0 contributions on 2026-05-15</title>
@@ -3914,11 +4049,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="636"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.834s"
 >
     <title>0 contributions on 2026-05-16</title>
@@ -3928,11 +4063,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="652"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.702s"
 >
     <title>0 contributions on 2026-05-17</title>
@@ -3942,11 +4077,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="652"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.727s"
 >
     <title>0 contributions on 2026-05-18</title>
@@ -3956,11 +4091,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="652"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.752s"
 >
     <title>0 contributions on 2026-05-19</title>
@@ -3970,11 +4105,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="652"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.777s"
 >
     <title>0 contributions on 2026-05-20</title>
@@ -3984,11 +4119,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="652"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.802s"
 >
     <title>0 contributions on 2026-05-21</title>
@@ -3998,11 +4133,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="652"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.827s"
 >
     <title>0 contributions on 2026-05-22</title>
@@ -4012,11 +4147,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="652"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#0e4429"
+    rx="2"
+    fill="#17343a"
     style="animation-delay:0.852s"
 >
     <title>1 contribution on 2026-05-23</title>
@@ -4026,11 +4161,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="668"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.720s"
 >
     <title>0 contributions on 2026-05-24</title>
@@ -4040,11 +4175,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="668"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.745s"
 >
     <title>0 contributions on 2026-05-25</title>
@@ -4054,11 +4189,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="668"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.770s"
 >
     <title>0 contributions on 2026-05-26</title>
@@ -4068,11 +4203,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="668"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.795s"
 >
     <title>0 contributions on 2026-05-27</title>
@@ -4082,11 +4217,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="668"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.820s"
 >
     <title>0 contributions on 2026-05-28</title>
@@ -4096,11 +4231,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="668"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.845s"
 >
     <title>0 contributions on 2026-05-29</title>
@@ -4110,11 +4245,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="668"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.870s"
 >
     <title>0 contributions on 2026-05-30</title>
@@ -4124,11 +4259,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="684"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.738s"
 >
     <title>0 contributions on 2026-05-31</title>
@@ -4138,11 +4273,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="684"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.763s"
 >
     <title>0 contributions on 2026-06-01</title>
@@ -4152,11 +4287,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="684"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.788s"
 >
     <title>0 contributions on 2026-06-02</title>
@@ -4166,11 +4301,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="684"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.813s"
 >
     <title>0 contributions on 2026-06-03</title>
@@ -4180,11 +4315,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="684"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.838s"
 >
     <title>0 contributions on 2026-06-04</title>
@@ -4194,11 +4329,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="684"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.863s"
 >
     <title>0 contributions on 2026-06-05</title>
@@ -4208,11 +4343,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="684"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.888s"
 >
     <title>0 contributions on 2026-06-06</title>
@@ -4222,11 +4357,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="700"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.756s"
 >
     <title>0 contributions on 2026-06-07</title>
@@ -4236,11 +4371,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="700"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.781s"
 >
     <title>0 contributions on 2026-06-08</title>
@@ -4250,11 +4385,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="700"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.806s"
 >
     <title>0 contributions on 2026-06-09</title>
@@ -4264,11 +4399,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="700"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.831s"
 >
     <title>0 contributions on 2026-06-10</title>
@@ -4278,11 +4413,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="700"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.856s"
 >
     <title>0 contributions on 2026-06-11</title>
@@ -4292,11 +4427,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="700"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.881s"
 >
     <title>0 contributions on 2026-06-12</title>
@@ -4306,11 +4441,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="700"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.906s"
 >
     <title>0 contributions on 2026-06-13</title>
@@ -4320,11 +4455,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="716"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.774s"
 >
     <title>0 contributions on 2026-06-14</title>
@@ -4334,11 +4469,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="716"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.799s"
 >
     <title>0 contributions on 2026-06-15</title>
@@ -4348,11 +4483,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="716"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.824s"
 >
     <title>0 contributions on 2026-06-16</title>
@@ -4362,11 +4497,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="716"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.849s"
 >
     <title>0 contributions on 2026-06-17</title>
@@ -4376,11 +4511,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="716"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.874s"
 >
     <title>0 contributions on 2026-06-18</title>
@@ -4390,11 +4525,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="716"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.899s"
 >
     <title>0 contributions on 2026-06-19</title>
@@ -4404,11 +4539,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="716"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.924s"
 >
     <title>0 contributions on 2026-06-20</title>
@@ -4418,11 +4553,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="732"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.792s"
 >
     <title>0 contributions on 2026-06-21</title>
@@ -4432,11 +4567,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="732"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.817s"
 >
     <title>0 contributions on 2026-06-22</title>
@@ -4446,11 +4581,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="732"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.842s"
 >
     <title>0 contributions on 2026-06-23</title>
@@ -4460,11 +4595,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="732"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.867s"
 >
     <title>0 contributions on 2026-06-24</title>
@@ -4474,11 +4609,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="732"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.892s"
 >
     <title>0 contributions on 2026-06-25</title>
@@ -4488,11 +4623,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="732"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.917s"
 >
     <title>0 contributions on 2026-06-26</title>
@@ -4502,11 +4637,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="732"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.942s"
 >
     <title>0 contributions on 2026-06-27</title>
@@ -4516,11 +4651,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="748"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.810s"
 >
     <title>0 contributions on 2026-06-28</title>
@@ -4530,11 +4665,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="748"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.835s"
 >
     <title>0 contributions on 2026-06-29</title>
@@ -4544,11 +4679,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="748"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.860s"
 >
     <title>0 contributions on 2026-06-30</title>
@@ -4558,11 +4693,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="748"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.885s"
 >
     <title>0 contributions on 2026-07-01</title>
@@ -4572,11 +4707,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="748"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.910s"
 >
     <title>0 contributions on 2026-07-02</title>
@@ -4586,11 +4721,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="748"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.935s"
 >
     <title>0 contributions on 2026-07-03</title>
@@ -4600,11 +4735,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="748"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.960s"
 >
     <title>0 contributions on 2026-07-04</title>
@@ -4614,11 +4749,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="764"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.828s"
 >
     <title>0 contributions on 2026-07-05</title>
@@ -4628,11 +4763,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="764"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.853s"
 >
     <title>0 contributions on 2026-07-06</title>
@@ -4642,11 +4777,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="764"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.878s"
 >
     <title>0 contributions on 2026-07-07</title>
@@ -4656,11 +4791,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="764"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.903s"
 >
     <title>0 contributions on 2026-07-08</title>
@@ -4670,11 +4805,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="764"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.928s"
 >
     <title>0 contributions on 2026-07-09</title>
@@ -4684,11 +4819,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="764"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.953s"
 >
     <title>0 contributions on 2026-07-10</title>
@@ -4698,11 +4833,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="764"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.978s"
 >
     <title>0 contributions on 2026-07-11</title>
@@ -4712,11 +4847,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="780"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.846s"
 >
     <title>0 contributions on 2026-07-12</title>
@@ -4726,11 +4861,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="780"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.871s"
 >
     <title>0 contributions on 2026-07-13</title>
@@ -4740,11 +4875,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="780"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.896s"
 >
     <title>0 contributions on 2026-07-14</title>
@@ -4754,11 +4889,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="780"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.921s"
 >
     <title>0 contributions on 2026-07-15</title>
@@ -4768,11 +4903,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="780"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.946s"
 >
     <title>0 contributions on 2026-07-16</title>
@@ -4782,11 +4917,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="780"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.971s"
 >
     <title>0 contributions on 2026-07-17</title>
@@ -4796,11 +4931,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="780"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.996s"
 >
     <title>0 contributions on 2026-07-18</title>
@@ -4810,11 +4945,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="796"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.864s"
 >
     <title>0 contributions on 2026-07-19</title>
@@ -4824,11 +4959,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="796"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.889s"
 >
     <title>0 contributions on 2026-07-20</title>
@@ -4838,11 +4973,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="796"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.914s"
 >
     <title>0 contributions on 2026-07-21</title>
@@ -4852,11 +4987,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="796"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.939s"
 >
     <title>0 contributions on 2026-07-22</title>
@@ -4866,11 +5001,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="796"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.964s"
 >
     <title>0 contributions on 2026-07-23</title>
@@ -4880,11 +5015,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="796"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.989s"
 >
     <title>0 contributions on 2026-07-24</title>
@@ -4894,11 +5029,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="796"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:1.014s"
 >
     <title>0 contributions on 2026-07-25</title>
@@ -4908,11 +5043,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="812"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.882s"
 >
     <title>0 contributions on 2026-07-26</title>
@@ -4922,11 +5057,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="812"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.907s"
 >
     <title>0 contributions on 2026-07-27</title>
@@ -4936,11 +5071,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="812"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.932s"
 >
     <title>0 contributions on 2026-07-28</title>
@@ -4950,11 +5085,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="812"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.957s"
 >
     <title>0 contributions on 2026-07-29</title>
@@ -4964,11 +5099,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="812"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.982s"
 >
     <title>0 contributions on 2026-07-30</title>
@@ -4978,11 +5113,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="812"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:1.007s"
 >
     <title>0 contributions on 2026-07-31</title>
@@ -4992,11 +5127,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="812"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:1.032s"
 >
     <title>0 contributions on 2026-08-01</title>
@@ -5006,11 +5141,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="828"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.900s"
 >
     <title>0 contributions on 2026-08-02</title>
@@ -5020,11 +5155,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="828"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.925s"
 >
     <title>0 contributions on 2026-08-03</title>
@@ -5034,11 +5169,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="828"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.950s"
 >
     <title>0 contributions on 2026-08-04</title>
@@ -5048,11 +5183,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="828"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.975s"
 >
     <title>0 contributions on 2026-08-05</title>
@@ -5062,11 +5197,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="828"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:1.000s"
 >
     <title>0 contributions on 2026-08-06</title>
@@ -5076,11 +5211,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="828"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:1.025s"
 >
     <title>0 contributions on 2026-08-07</title>
@@ -5090,11 +5225,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="828"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:1.050s"
 >
     <title>0 contributions on 2026-08-08</title>
@@ -5104,11 +5239,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="844"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.918s"
 >
     <title>0 contributions on 2026-08-09</title>
@@ -5118,11 +5253,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="844"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.943s"
 >
     <title>0 contributions on 2026-08-10</title>
@@ -5132,11 +5267,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="844"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.968s"
 >
     <title>0 contributions on 2026-08-11</title>
@@ -5146,11 +5281,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="844"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.993s"
 >
     <title>0 contributions on 2026-08-12</title>
@@ -5160,11 +5295,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="844"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:1.018s"
 >
     <title>0 contributions on 2026-08-13</title>
@@ -5174,11 +5309,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="844"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:1.043s"
 >
     <title>0 contributions on 2026-08-14</title>
@@ -5188,11 +5323,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="844"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:1.068s"
 >
     <title>0 contributions on 2026-08-15</title>
@@ -5202,11 +5337,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="860"
-    y="42"
+    y="55"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.936s"
 >
     <title>0 contributions on 2026-08-16</title>
@@ -5216,11 +5351,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="860"
-    y="58"
+    y="71"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.961s"
 >
     <title>0 contributions on 2026-08-17</title>
@@ -5230,11 +5365,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="860"
-    y="74"
+    y="87"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:0.986s"
 >
     <title>0 contributions on 2026-08-18</title>
@@ -5244,11 +5379,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="860"
-    y="90"
+    y="103"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:1.011s"
 >
     <title>0 contributions on 2026-08-19</title>
@@ -5258,11 +5393,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="860"
-    y="106"
+    y="119"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:1.036s"
 >
     <title>0 contributions on 2026-08-20</title>
@@ -5272,11 +5407,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="860"
-    y="122"
+    y="135"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:1.061s"
 >
     <title>0 contributions on 2026-08-21</title>
@@ -5286,11 +5421,11 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 <rect
     class="cell"
     x="860"
-    y="138"
+    y="151"
     width="12"
     height="12"
-    rx="3"
-    fill="#161b22"
+    rx="2"
+    fill="#111318"
     style="animation-delay:1.086s"
 >
     <title>0 contributions on 2026-08-22</title>
@@ -5299,94 +5434,112 @@ aria-label="GitHub contribution heatmap for vadimkulishov"
 
 <text
     class="subtitle"
-    x="685"
-    y="29"
+    x="708"
+    y="54"
 >
-    Less
+    LESS
 </text>
 
 
 <rect
+    x="740"
+    y="45"
+    width="12"
+    height="12"
+    rx="2"
+    fill="#111318"
+/>
+
+
+<rect
+    x="756"
+    y="45"
+    width="12"
+    height="12"
+    rx="2"
+    fill="#17343a"
+/>
+
+
+<rect
+    x="772"
+    y="45"
+    width="12"
+    height="12"
+    rx="2"
+    fill="#006b73"
+/>
+
+
+<rect
+    x="788"
+    y="45"
+    width="12"
+    height="12"
+    rx="2"
+    fill="#00c9d7"
+/>
+
+
+<rect
+    x="804"
+    y="45"
+    width="12"
+    height="12"
+    rx="2"
+    fill="#fcee0a"
+/>
+
+
+<text
+    class="subtitle"
+    x="826"
+    y="54"
+>
+    MORE
+</text>
+
+
+<text
+    class="subtitle"
+    x="28"
+    y="166"
+>
+    ACTIVITY_MATRIX
+</text>
+
+<text
+    class="subtitle"
+    x="28"
+    y="180"
+>
+    53 WEEKS / 07 DAYS
+</text>
+
+
+<text
+    class="footer"
+    x="28"
+    y="188"
+>
+    STREAK: 0 DAYS
+</text>
+
+<text
+    class="footer"
+    x="190"
+    y="188"
+>
+    LONGEST: 3 DAYS
+</text>
+
+<text
+    class="footer"
     x="715"
-    y="20"
-    width="12"
-    height="12"
-    rx="3"
-    fill="#161b22"
-/>
-
-
-<rect
-    x="730"
-    y="20"
-    width="12"
-    height="12"
-    rx="3"
-    fill="#0e4429"
-/>
-
-
-<rect
-    x="745"
-    y="20"
-    width="12"
-    height="12"
-    rx="3"
-    fill="#006d32"
-/>
-
-
-<rect
-    x="760"
-    y="20"
-    width="12"
-    height="12"
-    rx="3"
-    fill="#26a641"
-/>
-
-
-<rect
-    x="775"
-    y="20"
-    width="12"
-    height="12"
-    rx="3"
-    fill="#39d353"
-/>
-
-
-<text
-    class="subtitle"
-    x="793"
-    y="29"
+    y="188"
 >
-    More
+    VADIM // NIGHT CITY NODE
 </text>
 
-
-<text
-    class="subtitle"
-    x="24"
-    y="161"
->
-    current streak: 0 days
-</text>
-
-<text
-    class="subtitle"
-    x="210"
-    y="161"
->
-    longest streak: 3 days
-</text>
-
-<text
-    class="subtitle"
-    x="670"
-    y="161"
->
-    @vadimkulishov
-</text>
 
 </svg>

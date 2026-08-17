@@ -1,236 +1,321 @@
 <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="490"
-    height="330"
-    viewBox="0 0 490 330"
+xmlns="http://www.w3.org/2000/svg"
+width="490"
+height="430"
+viewBox="0 0 490 430"
 >
+
 <style>
-    .background {
-        fill: #0d1117;
-        stroke: #30363d;
-        stroke-width: 1;
-    }
 
-    .title {
-        fill: #8b949e;
-        font-family:
-            "SFMono-Regular",
-            "Cascadia Code",
-            "Roboto Mono",
-            "Courier New",
-            monospace;
-        font-size: 13px;
-        font-weight: 600;
-    }
+* {
+    font-family:
+        "SFMono-Regular",
+        "Cascadia Code",
+        "Roboto Mono",
+        "Courier New",
+        monospace;
+}
 
-    .key {
-        font-family:
-            "SFMono-Regular",
-            "Cascadia Code",
-            "Roboto Mono",
-            "Courier New",
-            monospace;
-        font-size: 14px;
-        font-weight: 600;
-    }
+.panel {
+    fill: #0b0d12;
+    stroke: #fcee0a;
+    stroke-width: 1.5;
+}
 
-    .value {
-        fill: #c9d1d9;
-        font-family:
-            "SFMono-Regular",
-            "Cascadia Code",
-            "Roboto Mono",
-            "Courier New",
-            monospace;
-        font-size: 14px;
-    }
+.title {
+    fill: #fcee0a;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
 
-    .line {
+.label {
+    fill: #00f0ff;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.value {
+    fill: #e8e8e8;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.muted {
+    fill: #777b85;
+    font-size: 10px;
+}
+
+.line {
+    stroke: #24262d;
+    stroke-width: 1;
+}
+
+.data {
+    opacity: 0;
+    animation: boot 0.4s ease-out forwards;
+}
+
+@keyframes boot {
+    from {
         opacity: 0;
-        transform: translateX(-8px);
-        animation: appear 0.35s ease-out forwards;
+        transform: translateX(15px);
     }
 
-    @keyframes appear {
-        from {
-            opacity: 0;
-            transform: translateX(-8px);
-        }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
+.scan {
+    fill: #00f0ff;
+    opacity: 0.08;
+    animation: scan 3s linear infinite;
+}
+
+@keyframes scan {
+    from {
+        transform: translateY(-420px);
     }
 
-    @media (prefers-reduced-motion: reduce) {
-        .line {
-            animation: none;
-            opacity: 1;
-            transform: none;
-        }
+    to {
+        transform: translateY(420px);
     }
+}
+
 </style>
 
 <rect
-    class="background"
-    x="0.5"
-    y="0.5"
-    width="489"
-    height="329"
-    rx="10"
+    class="panel"
+    x="1"
+    y="1"
+    width="488"
+    height="428"
 />
 
-<circle cx="18" cy="18" r="5" fill="#ff5f56"/>
-<circle cx="35" cy="18" r="5" fill="#ffbd2e"/>
-<circle cx="52" cy="18" r="5" fill="#27c93f"/>
+<!-- corner decorations -->
+
+<path
+    d="M1 35 H18 V18"
+    fill="none"
+    stroke="#00f0ff"
+    stroke-width="2"
+/>
+
+<path
+    d="M489 35 H472 V18"
+    fill="none"
+    stroke="#ff2a6d"
+    stroke-width="2"
+/>
+
+<path
+    d="M1 395 H18 V412"
+    fill="none"
+    stroke="#ff2a6d"
+    stroke-width="2"
+/>
+
+<path
+    d="M489 395 H472 V412"
+    fill="none"
+    stroke="#00f0ff"
+    stroke-width="2"
+/>
+
+<!-- scanline -->
+
+<rect
+    class="scan"
+    x="0"
+    y="0"
+    width="490"
+    height="3"
+/>
+
+<!-- header -->
 
 <text
     class="title"
-    x="72"
-    y="22"
+    x="25"
+    y="29"
 >
-    vadim@github
+    // IDENTITY_MODULE
+</text>
+
+<text
+    class="muted"
+    x="365"
+    y="29"
+>
+    v2.077
 </text>
 
 <line
-    x1="18"
-    y1="43"
-    x2="472"
-    y2="43"
-    stroke="#30363d"
+    class="line"
+    x1="20"
+    y1="45"
+    x2="470"
+    y2="45"
 />
 
-<g
-    class="line"
-    style="animation-delay:0.00s"
->
-    <text
-        class="key"
-        fill="#58a6ff"
-        x="24"
-        y="76"
-    >
-        Now
-    </text>
-
-    <text
-        class="value"
-        x="145"
-        y="76"
-    >
-        Frontend Developer
-    </text>
-</g>
+<!-- identity -->
 
 <g
-    class="line"
-    style="animation-delay:0.00s"
+    class="data"
+    style="animation-delay:0.2s"
 >
-    <text
-        class="key"
-        fill="#79c0ff"
-        x="24"
-        y="113"
-    >
-        Stack
-    </text>
-
-    <text
-        class="value"
-        x="145"
-        y="113"
-    >
-        React · TypeScript
-    </text>
-</g>
-
-<g
-    class="line"
-    style="animation-delay:0.00s"
->
-    <text
-        class="value"
-        x="145"
-        y="150"
-    >
-        JavaScript · CSS
-    </text>
-</g>
-
-<g
-    class="line"
-    style="animation-delay:0.00s"
->
-    <text
-        class="key"
-        fill="#a5d6ff"
-        x="24"
-        y="187"
-    >
-        Focus
-    </text>
-
-    <text
-        class="value"
-        x="145"
-        y="187"
-    >
-        UI/UX · Performance
-    </text>
-</g>
-
-<g
-    class="line"
-    style="animation-delay:0.00s"
->
-    <text
-        class="key"
-        fill="#d2a8ff"
-        x="24"
-        y="224"
-    >
-        Learning
-    </text>
-
-    <text
-        class="value"
-        x="145"
-        y="224"
-    >
-        Web3 · Design Systems
-    </text>
-</g>
-
-<g
-    class="line"
-    style="animation-delay:0.00s"
->
-    <text
-        class="key"
-        fill="#ff7b72"
-        x="24"
-        y="261"
-    >
-        GitHub
-    </text>
-
-    <text
-        class="value"
-        x="145"
-        y="261"
-    >
-        github.com/vadimkulishov
-    </text>
-</g>
-
 
 <text
-    class="title"
-    x="24"
-    y="308"
+    class="label"
+    x="25"
+    y="78"
 >
-    $ whoami
+    USER
+</text>
+
+<text
+    class="value"
+    x="25"
+    y="101"
+>
+    VADIM KULISHOV
+</text>
+
+<text
+    class="muted"
+    x="25"
+    y="120"
+>
+    @vadimkulishov
+</text>
+
+</g>
+
+<!-- role -->
+
+<g
+    class="data"
+    style="animation-delay:0.35s"
+>
+
+<text
+    class="label"
+    x="25"
+    y="157"
+>
+    ROLE
+</text>
+
+<text
+    class="value"
+    x="25"
+    y="180"
+>
+    FRONTEND DEVELOPER
+</text>
+
+</g>
+
+<!-- stack -->
+
+<g
+    class="data"
+    style="animation-delay:0.5s"
+>
+
+<text
+    class="label"
+    x="25"
+    y="218"
+>
+    STACK
+</text>
+
+<text
+    class="value"
+    x="25"
+    y="243"
+>
+    REACT / TYPESCRIPT / JAVASCRIPT
+</text>
+
+<text
+    class="value"
+    x="25"
+    y="267"
+>
+    HTML / CSS
+</text>
+
+</g>
+
+<!-- status -->
+
+<g
+    class="data"
+    style="animation-delay:0.65s"
+>
+
+<text
+    class="label"
+    x="25"
+    y="307"
+>
+    SYSTEM STATUS
+</text>
+
+<circle
+    cx="29"
+    cy="330"
+    r="5"
+    fill="#fcee0a"
+/>
+
+<text
+    class="value"
+    x="45"
+    y="335"
+>
+    ONLINE
+</text>
+
+<text
+    class="muted"
+    x="25"
+    y="360"
+>
+    CONNECTION: SECURE
+</text>
+
+</g>
+
+<!-- footer -->
+
+<line
+    class="line"
+    x1="20"
+    y1="385"
+    x2="470"
+    y2="385"
+/>
+
+<text
+    class="muted"
+    x="25"
+    y="407"
+>
+    NIGHT CITY // LOCAL NODE
+</text>
+
+<text
+    class="muted"
+    x="360"
+    y="407"
+>
+    2077
 </text>
 
 </svg>

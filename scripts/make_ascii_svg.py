@@ -1,206 +1,543 @@
 from pathlib import Path
-import math
+from PIL import Image
 import html
 
-from PIL import Image
 
+# =========================================================
+# PATHS
+# =========================================================
 
 ROOT = Path(__file__).resolve().parent.parent
 
-INPUT = ROOT / "source-prepped.png"
+SOURCE = ROOT / "source-prepped.png"
 OUTPUT = ROOT / "vadim-ascii.svg"
 
 
-# From light -> dark.
-# More characters = darker area.
-DENSITY = " .'`^\",:;Il!i~+_-?][}{1)(|\\/"
-DENSITY += "tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$"
+# =========================================================
+# PORTRAIT SETTINGS
+# =========================================================
 
-# Size of the ASCII portrait.
-COLUMNS = 180
-ROWS = 80
+COLUMNS = 72
+FONT_SIZE = 7.5
 
-# Character dimensions.
-CHAR_WIDTH = 7.0
-CHAR_HEIGHT = 10.0
+CHAR_WIDTH = 4.5
+LINE_HEIGHT = 9
 
-# SVG appearance.
-TEXT_COLOR = "#b8b8b8"
-FONT_SIZE = 10
+PADDING = 24
 
-# Animation.
-ROW_DURATION = 0.45
-ROW_STAGGER = 0.055
+# Bright -> dark
+CHARS = " .:-=+*#%@"
+
+# =========================================================
+# CYBERPUNK COLORS
+# =========================================================
+
+BACKGROUND = "#050509"
+
+YELLOW = "#fcee0a"
+CYAN = "#00f0ff"
+MAGENTA = "#ff2a6d"
+
+ASCII_COLOR = "#d7d7d7"
+MUTED = "#777b85"
 
 
-def brightness_to_char(value: int) -> str:
+# =========================================================
+# HELPERS
+# =========================================================
+
+def esc(value):
+    return html.escape(str(value))
+
+
+def brightness_to_char(brightness):
     """
-    Convert brightness (0 = black, 255 = white)
-    into an ASCII character.
+    Convert grayscale brightness 0..255
+    into ASCII character.
     """
 
-    # White -> first character (" ")
-    # Black -> last character ("@")
-    index = int((255 - value) / 255 * (len(DENSITY) - 1))
+    index = int(
+        brightness / 255 * (len(CHARS) - 1)
+    )
 
-    return DENSITY[index]
+    return CHARS[index]
 
 
-def load_and_resize() -> Image.Image:
-    image = Image.open(INPUT).convert("L")
+def load_image():
 
-    # ASCII characters are taller than they are wide,
-    # so compensate for character aspect ratio.
-    target_ratio = COLUMNS / ROWS
+    if not SOURCE.exists():
+
+        raise FileNotFoundError(
+            f"""
+Source image not found:
+
+{SOURCE}
+
+Make sure source-prepped.png exists.
+"""
+        )
+
+    image = Image.open(
+        SOURCE
+    ).convert("L")
+
+    return image
+
+
+def prepare_image(image):
 
     width, height = image.size
-    source_ratio = width / height
 
-    if source_ratio > target_ratio:
-        new_width = COLUMNS
-        new_height = round(COLUMNS / source_ratio)
-    else:
-        new_height = ROWS
-        new_width = round(ROWS * source_ratio)
+    aspect_ratio = height / width
+
+    rows = int(
+        COLUMNS
+        * aspect_ratio
+        * 0.50
+    )
 
     image = image.resize(
-        (new_width, new_height),
-        Image.Resampling.LANCZOS,
+        (
+            COLUMNS,
+            rows
+        )
     )
 
-    # Put image in a white canvas.
-    canvas = Image.new(
-        "L",
-        (COLUMNS, ROWS),
-        255,
-    )
-
-    x = (COLUMNS - new_width) // 2
-    y = (ROWS - new_height) // 2
-
-    canvas.paste(image, (x, y))
-
-    return canvas
+    return image
 
 
-def build_ascii(image: Image.Image) -> list[str]:
+# =========================================================
+# ASCII GENERATION
+# =========================================================
+
+def create_ascii(image):
+
+    pixels = image.load()
+
+    width, height = image.size
+
     lines = []
 
-    for y in range(ROWS):
-        line = ""
+    for y in range(height):
 
-        for x in range(COLUMNS):
-            brightness = image.getpixel((x, y))
-            line += brightness_to_char(brightness)
+        line = []
 
-        lines.append(line.rstrip())
+        for x in range(width):
+
+            brightness = pixels[x, y]
+
+            char = brightness_to_char(
+                brightness
+            )
+
+            line.append(char)
+
+        lines.append(
+            "".join(line)
+        )
 
     return lines
 
 
-def escape_text(text: str) -> str:
-    return html.escape(text)
+# =========================================================
+# SVG
+# =========================================================
 
+def create_svg(lines):
 
-def create_svg(lines: list[str]) -> str:
-    width = int(COLUMNS * CHAR_WIDTH)
-    height = int(ROWS * CHAR_HEIGHT)
+    rows = len(lines)
 
-    parts = []
+    width = (
+        COLUMNS
+        * CHAR_WIDTH
+        + PADDING * 2
+    )
 
-    parts.append(
+    height = (
+        rows
+        * LINE_HEIGHT
+        + 100
+    )
+
+    svg = []
+
+    # =====================================================
+    # SVG HEADER
+    # =====================================================
+
+    svg.append(
         f'''<svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="{width}"
-    height="{height}"
-    viewBox="0 0 {width} {height}"
+xmlns="http://www.w3.org/2000/svg"
+width="{width}"
+height="{height}"
+viewBox="0 0 {width} {height}"
+role="img"
+aria-label="Cyberpunk ASCII portrait"
 >
-<style>
-    .ascii {{
-        font-family:
-            "SFMono-Regular",
-            "Cascadia Code",
-            "Roboto Mono",
-            "Courier New",
-            monospace;
 
-        font-size: {FONT_SIZE}px;
-        font-weight: 500;
-        fill: {TEXT_COLOR};
-        white-space: pre;
+<style>
+
+.ascii {{
+    font-family:
+        "SFMono-Regular",
+        "Cascadia Code",
+        "Roboto Mono",
+        "Courier New",
+        monospace;
+
+    font-size: {FONT_SIZE}px;
+
+    fill: {ASCII_COLOR};
+
+    dominant-baseline: middle;
+
+    letter-spacing: 0px;
+}}
+
+.header {{
+    fill: {YELLOW};
+
+    font-family:
+        "SFMono-Regular",
+        "Cascadia Code",
+        "Roboto Mono",
+        "Courier New",
+        monospace;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}}
+
+.meta {{
+    fill: {MUTED};
+
+    font-family:
+        "SFMono-Regular",
+        "Cascadia Code",
+        "Roboto Mono",
+        "Courier New",
+        monospace;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+}}
+
+.scan {{
+    fill: {CYAN};
+
+    opacity: 0.08;
+
+    animation:
+        scan 3s linear infinite;
+}}
+
+@keyframes scan {{
+
+    from {{
+        transform:
+            translateY(-100px);
     }}
+
+    to {{
+        transform:
+            translateY({height}px);
+    }}
+
+}}
+
+.row {{
+    opacity: 0;
+
+    animation:
+        print-row
+        0.25s
+        ease-out
+        forwards;
+}}
+
+@keyframes print-row {{
+
+    from {{
+        opacity: 0;
+
+        clip-path:
+            inset(
+                0
+                100%
+                0
+                0
+            );
+    }}
+
+    to {{
+        opacity: 1;
+
+        clip-path:
+            inset(
+                0
+                0
+                0
+                0
+            );
+    }}
+
+}}
+
+.corner {{
+    fill: none;
+
+    stroke-width: 1.5;
+}}
+
+@media (prefers-reduced-motion: reduce) {{
 
     .row {{
-        animation-name: reveal;
-        animation-duration: {ROW_DURATION}s;
-        animation-timing-function: ease-out;
-        animation-fill-mode: both;
+        animation: none;
+
+        opacity: 1;
     }}
 
-    @keyframes reveal {{
-        from {{
-            opacity: 0;
-            transform: translateX(-30px);
-        }}
-
-        to {{
-            opacity: 1;
-            transform: translateX(0);
-        }}
+    .scan {{
+        animation: none;
     }}
 
-    @media (prefers-reduced-motion: reduce) {{
-        .row {{
-            animation: none;
-        }}
-    }}
+}}
+
 </style>
+
+<!-- BACKGROUND -->
+
+<rect
+    x="1"
+    y="1"
+    width="{width - 2}"
+    height="{height - 2}"
+    rx="4"
+    fill="{BACKGROUND}"
+    stroke="{YELLOW}"
+    stroke-width="1.5"
+/>
+
+<!-- ================================================= -->
+<!-- HUD CORNERS -->
+<!-- ================================================= -->
+
+<path
+    class="corner"
+    stroke="{CYAN}"
+    d="
+        M1 35
+        H18
+        L28 25
+        H70
+    "
+/>
+
+<path
+    class="corner"
+    stroke="{MAGENTA}"
+    d="
+        M{width - 70} 25
+        H{width - 28}
+        L{width - 18} 35
+        H{width - 1}
+    "
+/>
+
+<path
+    class="corner"
+    stroke="{MAGENTA}"
+    d="
+        M1 {height - 30}
+        H18
+        L28 {height - 20}
+        H70
+    "
+/>
+
+<path
+    class="corner"
+    stroke="{CYAN}"
+    d="
+        M{width - 70} {height - 20}
+        H{width - 28}
+        L{width - 18} {height - 30}
+        H{width - 1}
+    "
+/>
+
+<!-- ================================================= -->
+<!-- HEADER -->
+<!-- ================================================= -->
+
+<text
+    class="header"
+    x="{PADDING}"
+    y="23"
+>
+    // VISUAL_ID
+</text>
+
+<text
+    class="meta"
+    x="{width - 170}"
+    y="23"
+>
+    SUBJECT: VADIM
+</text>
+
+<line
+    x1="{PADDING}"
+    y1="38"
+    x2="{width - PADDING}"
+    y2="38"
+    stroke="#24262d"
+    stroke-width="1"
+/>
+
+<!-- ================================================= -->
+<!-- SCANLINE -->
+<!-- ================================================= -->
+
+<rect
+    class="scan"
+    x="0"
+    y="0"
+    width="{width}"
+    height="2"
+/>
+
 '''
     )
 
-    for row, line in enumerate(lines):
-        y = (row + 1) * CHAR_HEIGHT
-        delay = row * ROW_STAGGER
+    # =====================================================
+    # ASCII ROWS
+    # =====================================================
 
-        # Slightly delay every row so it looks like
-        # the portrait is being printed.
-        parts.append(
-            f'''<text
+    start_y = 52
+
+    for index, line in enumerate(lines):
+
+        y = (
+            start_y
+            + index * LINE_HEIGHT
+        )
+
+        delay = (
+            index * 0.035
+        )
+
+        svg.append(
+            f'''
+<text
     class="ascii row"
-    x="0"
+    x="{PADDING}"
     y="{y}"
     style="animation-delay:{delay:.3f}s"
->{escape_text(line)}</text>
+>
+    {esc(line)}
+</text>
 '''
         )
 
-    parts.append("</svg>")
+    # =====================================================
+    # FOOTER
+    # =====================================================
 
-    return "\n".join(parts)
+    footer_y = (
+        start_y
+        + rows * LINE_HEIGHT
+        + 20
+    )
 
+    svg.append(
+        f'''
+<line
+    x1="{PADDING}"
+    y1="{footer_y - 18}"
+    x2="{width - PADDING}"
+    y2="{footer_y - 18}"
+    stroke="#24262d"
+    stroke-width="1"
+/>
+
+<text
+    class="meta"
+    x="{PADDING}"
+    y="{footer_y}"
+>
+    SCAN COMPLETE
+</text>
+
+<text
+    class="meta"
+    x="{width - 150}"
+    y="{footer_y}"
+>
+    NODE: NIGHT CITY
+</text>
+
+</svg>
+'''
+    )
+
+    return "\n".join(svg)
+
+
+# =========================================================
+# MAIN
+# =========================================================
 
 def main():
-    if not INPUT.exists():
-        raise FileNotFoundError(
-            f"Input image not found: {INPUT}"
-        )
 
-    print("[1/3] Loading image...")
-    image = load_and_resize()
+    print()
+    print("Loading portrait...")
 
-    print("[2/3] Building ASCII...")
-    lines = build_ascii(image)
+    image = load_image()
 
-    print("[3/3] Writing SVG...")
-    svg = create_svg(lines)
+    print(
+        f"Original size: "
+        f"{image.width}x{image.height}"
+    )
+
+    image = prepare_image(
+        image
+    )
+
+    print(
+        f"ASCII grid: "
+        f"{image.width}x{image.height}"
+    )
+
+    lines = create_ascii(
+        image
+    )
+
+    print(
+        f"Generating SVG..."
+    )
+
+    svg = create_svg(
+        lines
+    )
 
     OUTPUT.write_text(
         svg,
-        encoding="utf-8",
+        encoding="utf-8"
     )
 
     print()
-    print(f"Done: {OUTPUT}")
+    print("================================")
+    print(" CYBERPUNK ASCII GENERATED")
+    print("================================")
+    print(
+        f"Output: {OUTPUT}"
+    )
+    print()
 
 
 if __name__ == "__main__":
