@@ -1,42 +1,61 @@
 <div align="center">
 
-# <code>⚡ VADIM KULISHOV</code>
+<br>
 
-<pre>
-╔══════════════════════════════════════════════════════════════╗
-║  ███ NIGHT CITY // NETRUNNER PROFILE ███                   ║
-║                                                              ║
-║  SYSTEM       <b>● ONLINE</b>       ACCESS       <b>GRANTED</b>  ║
-║  NETWORK      ACTIVE             NODE         NC-01         ║
-╚══════════════════════════════════════════════════════════════╝
-</pre>
+# <code>VADIM KULISHOV</code>
 
-<code>▰▰▰ CONNECTION ESTABLISHED ▰▰▰</code>
+<code>╱╲ NIGHT CITY NETWORK ╱╲</code>
 
-<br><br>
+<br>
+<br>
 
 <table>
 <tr>
 <td>
 
 <pre>
-╭──────────────────────────────────────────────────────────────╮
-│  // NET_ACTIVITY                                             │
+┌──────────────────────────────────────────────────────────────┐
 │                                                              │
-│  CONTRIBUTION MATRIX                                        │
-╰──────────────────────────────────────────────────────────────╯
+│   ███  N E T W O R K   A C C E S S  ███                      │
+│                                                              │
+│   USER       VADIM KULISHOV                                  │
+│   STATUS     ● ONLINE                                        │
+│   ACCESS     ● GRANTED                                       │
+│   NODE       NC-01                                           │
+│                                                              │
+│   ────────────────────────────────────────────────────────   │
+│                                                              │
+│   CONNECTION                         ████████████ 100%       │
+│                                                              │
+└──────────────────────────────────────────────────────────────┘
 </pre>
+
+</td>
+</tr>
+</table>
+
+<br>
+
+<code>◆ ◆ ◆ &nbsp; NET ACTIVITY MATRIX &nbsp; ◆ ◆ ◆</code>
+
+<br>
+<br>
+
+<table>
+<tr>
+<td>
 
 <img
 src="./contrib-heatmap.svg"
 width="920"
-alt="VADIM // NET ACTIVITY"
+alt="Contribution Matrix"
 />
 
 </td>
 </tr>
 </table>
 
+<br>
 <br>
 
 <table>
@@ -44,37 +63,41 @@ alt="VADIM // NET ACTIVITY"
 
 <td width="440" valign="top">
 
-<pre>
-╭──────────────────────────────────────────╮
-│  // VISUAL_ID                            │
-│  SUBJECT: VADIM                          │
-│  STATUS: ONLINE                          │
-╰──────────────────────────────────────────╯
-</pre>
+<code>╔══ VISUAL_ID ═══════════════════╗</code>
+
+<br>
+<br>
 
 <img
 src="./vadim-ascii.svg"
 width="430"
-alt="VADIM // VISUAL ID"
+alt="Vadim ASCII portrait"
 />
+
+<br>
+<br>
+
+<code>╚═══════════════════════════════╝</code>
 
 </td>
 
 <td width="500" valign="top">
 
-<pre>
-╭──────────────────────────────────────────────╮
-│  // IDENTITY_MODULE                         │
-│  USER: VADIM KULISHOV                       │
-│  ACCESS: GRANTED                            │
-╰──────────────────────────────────────────────╯
-</pre>
+<code>╔══ IDENTITY_MODULE ═════════════╗</code>
+
+<br>
+<br>
 
 <img
 src="./info-card.svg"
 width="490"
-alt="VADIM // IDENTITY MODULE"
+alt="Identity module"
 />
+
+<br>
+<br>
+
+<code>╚═══════════════════════════════╝</code>
 
 </td>
 
@@ -82,86 +105,111 @@ alt="VADIM // IDENTITY MODULE"
 </table>
 
 <br>
+<br>
+
+<table>
+<tr>
+<td>
 
 <pre>
-╔══════════════════════════════════════════════════════════════╗
-║                                                              ║
-║  // STACK                                                    ║
-║                                                              ║
-║  &gt; FRONTEND                                                  ║
-║                                                              ║
-║    React                                                     ║
-║    TypeScript                                                ║
-║    JavaScript                                                ║
-║    HTML / CSS                                                ║
-║                                                              ║
-║  &gt; TOOLCHAIN                                                 ║
-║                                                              ║
-║    Git                                                       ║
-║    GitHub                                                    ║
-║    Vite                                                      ║
-║    VS Code                                                   ║
-║                                                              ║
-╚══════════════════════════════════════════════════════════════╝
+┌──────────────────────────────────────────────────────────────┐
+│                                                              │
+│   // SYSTEM_PROFILE                                          │
+│                                                              │
+│   ROLE                                                       │
+│   FRONTEND DEVELOPER                                         │
+│                                                              │
+│   ────────────────────────────────────────────────────────   │
+│                                                              │
+│   PRIMARY STACK                                              │
+│                                                              │
+│   React          TypeScript          JavaScript              │
+│   HTML           CSS                 REST API                │
+│                                                              │
+│   ────────────────────────────────────────────────────────   │
+│                                                              │
+│   TOOLCHAIN                                                  │
+│                                                              │
+│   Git            GitHub              Vite                    │
+│   VS Code                                                    │
+│                                                              │
+└──────────────────────────────────────────────────────────────┘
 </pre>
+
+</td>
+</tr>
+</table>
 
 <br>
 
+<table>
+<tr>
+<td>
+
 <pre>
 ╔══════════════════════════════════════════════════════════════╗
-║  // CURRENT_MISSION                                         ║
-╠══════════════════════════════════════════════════════════════╣
 ║                                                              ║
-║  &gt; INITIALIZING...                                           ║
+║   // CURRENT_MISSION                                         ║
 ║                                                              ║
-║  &gt; USER................. VADIM KULISHOV                     ║
-║  &gt; ROLE................. FRONTEND DEVELOPER                 ║
-║  &gt; STATUS............... ONLINE                             ║
-║  &gt; ACCESS............... GRANTED                            ║
+║   &gt; ACCESSING NIGHT CITY NET...                           ║
 ║                                                              ║
-║  &gt; OBJECTIVE                                               ║
+║   &gt; USER       : VADIM KULISHOV                           ║
+║   &gt; ROLE       : FRONTEND DEVELOPER                       ║
+║   &gt; STATUS     : ONLINE                                   ║
+║   &gt; ACCESS     : GRANTED                                  ║
 ║                                                              ║
-║    BUILD                                                     ║
-║    LEARN                                                     ║
-║    SHIP                                                      ║
+║   &gt; OBJECTIVE                                             ║
 ║                                                              ║
-║  &gt; CONNECTION                                               ║
+║     BUILD                                                    ║
+║     LEARN                                                    ║
+║     SHIP                                                     ║
 ║                                                              ║
-║    ████████████████████████████████████████ 100%            ║
+║   &gt; SYSTEM                                                ║
+║                                                              ║
+║     ████████████████████████████████████████  100%           ║
 ║                                                              ║
 ╚══════════════════════════════════════════════════════════════╝
 </pre>
+
+</td>
+</tr>
+</table>
 
 <br>
 
 <code>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</code>
 
-<br><br>
-
-# <code>◈ SYSTEM STATUS</code>
-
+<br>
 <br>
 
-`🟡 SYSTEM ONLINE` &nbsp;&nbsp;&nbsp; `🔵 NETWORK ACTIVE` &nbsp;&nbsp;&nbsp; `🩷 NIGHT CITY`
+<code>◉ SYSTEM ONLINE</code>
+&nbsp;&nbsp;&nbsp;
+<code>◉ NETWORK ACTIVE</code>
+&nbsp;&nbsp;&nbsp;
+<code>◉ ACCESS GRANTED</code>
 
-<br><br>
+<br>
+<br>
 
 <pre>
-╔══════════════════════════════════════════════════════════════╗
-║                                                              ║
-║              V A D I M   K U L I S H O V                   ║
-║                                                              ║
-║                 FRONTEND DEVELOPER                          ║
-║                                                              ║
-║              NIGHT CITY NODE // NC-01                       ║
-║                                                              ║
-║                  BUILD THE FUTURE.                          ║
-║                                                              ║
-╚══════════════════════════════════════════════════════════════╝
+╭──────────────────────────────────────────────────────────────╮
+│                                                              │
+│                    VADIM KULISHOV                            │
+│                                                              │
+│                  FRONTEND DEVELOPER                          │
+│                                                              │
+│                 NIGHT CITY // NC-01                          │
+│                                                              │
+│                   BUILD THE FUTURE                           │
+│                                                              │
+╰──────────────────────────────────────────────────────────────╯
 </pre>
 
 <br>
 
-<code>NC-01 // NET ACCESS GRANTED // 2026</code>
+<code>NC-01 // NIGHT CITY NETWORK // 2026</code>
+
+<br>
+<br>
 
 </div>
