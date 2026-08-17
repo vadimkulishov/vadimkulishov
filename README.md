@@ -1,50 +1,79 @@
 <div align="center">
 
-# `// VADIM KULISHOV`
+# <code>⚡ VADIM KULISHOV</code>
 
-### `NIGHT CITY // DEVELOPER PROFILE`
+<pre>
+╔══════════════════════════════════════════════════════════════╗
+║  ███ NIGHT CITY // NETRUNNER PROFILE ███                   ║
+║                                                              ║
+║  SYSTEM       <b>● ONLINE</b>       ACCESS       <b>GRANTED</b>  ║
+║  NETWORK      ACTIVE             NODE         NC-01         ║
+╚══════════════════════════════════════════════════════════════╝
+</pre>
 
-`[ SYSTEM: ONLINE ]` &nbsp;&nbsp; `[ NET ACCESS: GRANTED ]` &nbsp;&nbsp; `[ NODE: 01 ]`
+<code>▰▰▰ CONNECTION ESTABLISHED ▰▰▰</code>
 
-<br>
+<br><br>
 
----
+<table>
+<tr>
+<td>
 
-### `// NET_ACTIVITY`
+<pre>
+╭──────────────────────────────────────────────────────────────╮
+│  // NET_ACTIVITY                                             │
+│                                                              │
+│  CONTRIBUTION MATRIX                                        │
+╰──────────────────────────────────────────────────────────────╯
+</pre>
 
 <img
-  src="./contrib-heatmap.svg"
-  width="920"
-  alt="VADIM // NET ACTIVITY"
+src="./contrib-heatmap.svg"
+width="920"
+alt="VADIM // NET ACTIVITY"
 />
 
-<br>
+</td>
+</tr>
+</table>
 
----
+<br>
 
 <table>
 <tr>
 
-<td width="430" valign="top">
+<td width="440" valign="top">
 
-### `// VISUAL_ID`
+<pre>
+╭──────────────────────────────────────────╮
+│  // VISUAL_ID                            │
+│  SUBJECT: VADIM                          │
+│  STATUS: ONLINE                          │
+╰──────────────────────────────────────────╯
+</pre>
 
 <img
-  src="./vadim-ascii.svg"
-  width="430"
-  alt="VADIM // VISUAL ID"
+src="./vadim-ascii.svg"
+width="430"
+alt="VADIM // VISUAL ID"
 />
 
 </td>
 
-<td width="490" valign="top">
+<td width="500" valign="top">
 
-### `// IDENTITY_MODULE`
+<pre>
+╭──────────────────────────────────────────────╮
+│  // IDENTITY_MODULE                         │
+│  USER: VADIM KULISHOV                       │
+│  ACCESS: GRANTED                            │
+╰──────────────────────────────────────────────╯
+</pre>
 
 <img
-  src="./info-card.svg"
-  width="490"
-  alt="VADIM // IDENTITY MODULE"
+src="./info-card.svg"
+width="490"
+alt="VADIM // IDENTITY MODULE"
 />
 
 </td>
@@ -52,69 +81,87 @@
 </tr>
 </table>
 
----
+<br>
 
-### `// STACK`
-
-```text
-┌──────────────────────────────────────────────────────────┐
-│                                                          │
-│  FRONTEND                                                │
-│  ├── React                                               │
-│  ├── TypeScript                                          │
-│  ├── JavaScript                                          │
-│  ├── HTML / CSS                                          │
-│  └── REST API                                            │
-│                                                          │
-│  TOOLCHAIN                                                │
-│  ├── Git                                                  │
-│  ├── GitHub                                               │
-│  ├── Vite                                                 │
-│  └── VS Code                                              │
-│                                                          │
-└──────────────────────────────────────────────────────────┘
-```
-
-### `// CURRENT_MISSION`
-
-```text
-> INITIALIZING...
-
-> ACCESSING NIGHT CITY NET...
-
-> USER: VADIM KULISHOV
-
-> ROLE: FRONTEND DEVELOPER
-
-> STATUS: ONLINE
-
-> CURRENT OBJECTIVE:
-  BUILD. LEARN. SHIP.
-
-> CONNECTION: ESTABLISHED ████████████████████ 100%
-```
+<pre>
+╔══════════════════════════════════════════════════════════════╗
+║                                                              ║
+║  // STACK                                                    ║
+║                                                              ║
+║  &gt; FRONTEND                                                  ║
+║                                                              ║
+║    React                                                     ║
+║    TypeScript                                                ║
+║    JavaScript                                                ║
+║    HTML / CSS                                                ║
+║                                                              ║
+║  &gt; TOOLCHAIN                                                 ║
+║                                                              ║
+║    Git                                                       ║
+║    GitHub                                                    ║
+║    Vite                                                      ║
+║    VS Code                                                   ║
+║                                                              ║
+╚══════════════════════════════════════════════════════════════╝
+</pre>
 
 <br>
 
-### `// SYSTEM_STATUS`
-
-`🟡 ONLINE` &nbsp;&nbsp; `🔵 ACTIVE` &nbsp;&nbsp; `🩷 NIGHT CITY`
+<pre>
+╔══════════════════════════════════════════════════════════════╗
+║  // CURRENT_MISSION                                         ║
+╠══════════════════════════════════════════════════════════════╣
+║                                                              ║
+║  &gt; INITIALIZING...                                           ║
+║                                                              ║
+║  &gt; USER................. VADIM KULISHOV                     ║
+║  &gt; ROLE................. FRONTEND DEVELOPER                 ║
+║  &gt; STATUS............... ONLINE                             ║
+║  &gt; ACCESS............... GRANTED                            ║
+║                                                              ║
+║  &gt; OBJECTIVE                                               ║
+║                                                              ║
+║    BUILD                                                     ║
+║    LEARN                                                     ║
+║    SHIP                                                      ║
+║                                                              ║
+║  &gt; CONNECTION                                               ║
+║                                                              ║
+║    ████████████████████████████████████████ 100%            ║
+║                                                              ║
+╚══════════════════════════════════════════════════════════════╝
+</pre>
 
 <br>
 
----
+<code>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</code>
 
-```text
-╔══════════════════════════════════════════════════════════╗
-║                                                          ║
-║   VADIM KULISHOV                                         ║
-║   FRONTEND DEVELOPER                                     ║
-║                                                          ║
-║   "BUILD THE FUTURE."                                    ║
-║                                                          ║
-║   NIGHT CITY NODE // 2026                                ║
-║                                                          ║
-╚══════════════════════════════════════════════════════════╝
-```
+<br><br>
+
+# <code>◈ SYSTEM STATUS</code>
+
+<br>
+
+`🟡 SYSTEM ONLINE` &nbsp;&nbsp;&nbsp; `🔵 NETWORK ACTIVE` &nbsp;&nbsp;&nbsp; `🩷 NIGHT CITY`
+
+<br><br>
+
+<pre>
+╔══════════════════════════════════════════════════════════════╗
+║                                                              ║
+║              V A D I M   K U L I S H O V                   ║
+║                                                              ║
+║                 FRONTEND DEVELOPER                          ║
+║                                                              ║
+║              NIGHT CITY NODE // NC-01                       ║
+║                                                              ║
+║                  BUILD THE FUTURE.                          ║
+║                                                              ║
+╚══════════════════════════════════════════════════════════════╝
+</pre>
+
+<br>
+
+<code>NC-01 // NET ACCESS GRANTED // 2026</code>
 
 </div>
