@@ -14,12 +14,12 @@ OUTPUT = ROOT / "vadim-ascii.svg"
 
 
 # =========================================================
-# PORTRAIT SETTINGS
+# SETTINGS
 # =========================================================
 
-COLUMNS = 72
-FONT_SIZE = 7.5
+COLUMNS = 90
 
+FONT_SIZE = 7.5
 CHAR_WIDTH = 4.5
 LINE_HEIGHT = 9
 
@@ -27,6 +27,7 @@ PADDING = 24
 
 # Bright -> dark
 CHARS = " .:-=+*#%@"
+
 
 # =========================================================
 # CYBERPUNK COLORS
@@ -51,11 +52,6 @@ def esc(value):
 
 
 def brightness_to_char(brightness):
-    """
-    Convert grayscale brightness 0..255
-    into ASCII character.
-    """
-
     index = int(
         brightness / 255 * (len(CHARS) - 1)
     )
@@ -66,7 +62,6 @@ def brightness_to_char(brightness):
 def load_image():
 
     if not SOURCE.exists():
-
         raise FileNotFoundError(
             f"""
 Source image not found:
@@ -77,11 +72,7 @@ Make sure source-prepped.png exists.
 """
         )
 
-    image = Image.open(
-        SOURCE
-    ).convert("L")
-
-    return image
+    return Image.open(SOURCE).convert("L")
 
 
 def prepare_image(image):
@@ -96,19 +87,13 @@ def prepare_image(image):
         * 0.50
     )
 
-    image = image.resize(
+    return image.resize(
         (
             COLUMNS,
             rows
         )
     )
 
-    return image
-
-
-# =========================================================
-# ASCII GENERATION
-# =========================================================
 
 def create_ascii(image):
 
@@ -148,22 +133,32 @@ def create_svg(lines):
     rows = len(lines)
 
     width = (
-        COLUMNS
-        * CHAR_WIDTH
+        COLUMNS * CHAR_WIDTH
         + PADDING * 2
     )
 
     height = (
-        rows
-        * LINE_HEIGHT
+        rows * LINE_HEIGHT
         + 100
     )
 
-    svg = []
+    # -----------------------------------------------------
+    # ANIMATION
+    #
+    # Timeline:
+    #
+    # 0%   -> invisible
+    # 30%  -> completely printed
+    # 65%  -> stays visible
+    # 100% -> disappears
+    #
+    # Every row receives a slightly different delay,
+    # creating a top-to-bottom typing effect.
+    # -----------------------------------------------------
 
-    # =====================================================
-    # SVG HEADER
-    # =====================================================
+    ANIMATION_DURATION = 10
+
+    svg = []
 
     svg.append(
         f'''<svg
@@ -172,12 +167,13 @@ width="{width}"
 height="{height}"
 viewBox="0 0 {width} {height}"
 role="img"
-aria-label="Cyberpunk ASCII portrait"
+aria-label="Cyberpunk ASCII portrait of Vadim Kulishov"
 >
 
 <style>
 
 .ascii {{
+
     font-family:
         "SFMono-Regular",
         "Cascadia Code",
@@ -194,7 +190,13 @@ aria-label="Cyberpunk ASCII portrait"
     letter-spacing: 0px;
 }}
 
+
+/* =====================================================
+   CYBERPUNK HEADER
+   ===================================================== */
+
 .header {{
+
     fill: {YELLOW};
 
     font-family:
@@ -211,7 +213,9 @@ aria-label="Cyberpunk ASCII portrait"
     letter-spacing: 2px;
 }}
 
+
 .meta {{
+
     fill: {MUTED};
 
     font-family:
@@ -226,90 +230,163 @@ aria-label="Cyberpunk ASCII portrait"
     letter-spacing: 1px;
 }}
 
-.scan {{
-    fill: {CYAN};
 
-    opacity: 0.08;
-
-    animation:
-        scan 3s linear infinite;
-}}
-
-@keyframes scan {{
-
-    from {{
-        transform:
-            translateY(-100px);
-    }}
-
-    to {{
-        transform:
-            translateY({height}px);
-    }}
-
-}}
+/* =====================================================
+   ASCII PRINT ANIMATION
+   ===================================================== */
 
 .row {{
+
     opacity: 0;
 
     animation:
         print-row
-        0.25s
-        ease-out
-        forwards;
+        {ANIMATION_DURATION}s
+        ease-in-out
+        infinite;
+
 }}
+
 
 @keyframes print-row {{
 
-    from {{
+    /*
+     * START
+     */
+
+    0% {{
+
         opacity: 0;
 
         clip-path:
             inset(
-                0
-                100%
-                0
-                0
+                0 100% 0 0
             );
+
     }}
 
-    to {{
+
+    /*
+     * PRINTED
+     */
+
+    30% {{
+
         opacity: 1;
 
         clip-path:
             inset(
-                0
-                0
-                0
-                0
+                0 0 0 0
             );
+
+    }}
+
+
+    /*
+     * HOLD
+     */
+
+    65% {{
+
+        opacity: 1;
+
+        clip-path:
+            inset(
+                0 0 0 0
+            );
+
+    }}
+
+
+    /*
+     * ERASE
+     */
+
+    100% {{
+
+        opacity: 0;
+
+        clip-path:
+            inset(
+                0 100% 0 0
+            );
+
     }}
 
 }}
 
-.corner {{
-    fill: none;
 
-    stroke-width: 1.5;
+/* =====================================================
+   SCANLINE
+   ===================================================== */
+
+.scan {{
+
+    fill: {CYAN};
+
+    opacity: 0.06;
+
+    animation:
+        scan
+        4s
+        linear
+        infinite;
+
 }}
+
+
+@keyframes scan {{
+
+    from {{
+
+        transform:
+            translateY(-20px);
+
+    }}
+
+    to {{
+
+        transform:
+            translateY({height}px);
+
+    }}
+
+}}
+
+
+/* =====================================================
+   REDUCED MOTION
+   ===================================================== */
 
 @media (prefers-reduced-motion: reduce) {{
 
     .row {{
+
         animation: none;
 
         opacity: 1;
+
+        clip-path:
+            inset(
+                0 0 0 0
+            );
+
     }}
 
     .scan {{
+
         animation: none;
+
     }}
 
 }}
 
 </style>
 
-<!-- BACKGROUND -->
+
+<!-- =====================================================
+     BACKGROUND
+     ===================================================== -->
 
 <rect
     x="1"
@@ -322,57 +399,63 @@ aria-label="Cyberpunk ASCII portrait"
     stroke-width="1.5"
 />
 
-<!-- ================================================= -->
-<!-- HUD CORNERS -->
-<!-- ================================================= -->
+
+<!-- =====================================================
+     HUD CORNERS
+     ===================================================== -->
 
 <path
-    class="corner"
-    stroke="{CYAN}"
     d="
         M1 35
         H18
         L28 25
         H70
     "
+    fill="none"
+    stroke="{CYAN}"
+    stroke-width="1.5"
 />
 
 <path
-    class="corner"
-    stroke="{MAGENTA}"
     d="
         M{width - 70} 25
         H{width - 28}
         L{width - 18} 35
         H{width - 1}
     "
+    fill="none"
+    stroke="{MAGENTA}"
+    stroke-width="1.5"
 />
 
 <path
-    class="corner"
-    stroke="{MAGENTA}"
     d="
         M1 {height - 30}
         H18
         L28 {height - 20}
         H70
     "
+    fill="none"
+    stroke="{MAGENTA}"
+    stroke-width="1.5"
 />
 
 <path
-    class="corner"
-    stroke="{CYAN}"
     d="
         M{width - 70} {height - 20}
         H{width - 28}
         L{width - 18} {height - 30}
         H{width - 1}
     "
+    fill="none"
+    stroke="{CYAN}"
+    stroke-width="1.5"
 />
 
-<!-- ================================================= -->
-<!-- HEADER -->
-<!-- ================================================= -->
+
+<!-- =====================================================
+     HEADER
+     ===================================================== -->
 
 <text
     class="header"
@@ -390,6 +473,7 @@ aria-label="Cyberpunk ASCII portrait"
     SUBJECT: VADIM
 </text>
 
+
 <line
     x1="{PADDING}"
     y1="38"
@@ -399,9 +483,10 @@ aria-label="Cyberpunk ASCII portrait"
     stroke-width="1"
 />
 
-<!-- ================================================= -->
-<!-- SCANLINE -->
-<!-- ================================================= -->
+
+<!-- =====================================================
+     SCANLINE
+     ===================================================== -->
 
 <rect
     class="scan"
@@ -410,6 +495,7 @@ aria-label="Cyberpunk ASCII portrait"
     width="{width}"
     height="2"
 />
+
 
 '''
     )
@@ -420,6 +506,8 @@ aria-label="Cyberpunk ASCII portrait"
 
     start_y = 52
 
+    total_rows = len(lines)
+
     for index, line in enumerate(lines):
 
         y = (
@@ -427,9 +515,20 @@ aria-label="Cyberpunk ASCII portrait"
             + index * LINE_HEIGHT
         )
 
+        # Top rows start earlier.
+        #
+        # This creates the feeling that the portrait
+        # is being typed from top to bottom.
         delay = (
-            index * 0.035
+            index
+            * 0.035
         )
+
+        # SVG animation-delay accepts seconds.
+        # The total delay is kept inside the loop.
+        #
+        # The modulo makes sure every row participates
+        # in every animation cycle.
 
         svg.append(
             f'''
@@ -437,7 +536,10 @@ aria-label="Cyberpunk ASCII portrait"
     class="ascii row"
     x="{PADDING}"
     y="{y}"
-    style="animation-delay:{delay:.3f}s"
+    style="
+        animation-delay:
+        {delay:.3f}s;
+    "
 >
     {esc(line)}
 </text>
@@ -495,6 +597,11 @@ aria-label="Cyberpunk ASCII portrait"
 def main():
 
     print()
+    print("================================")
+    print(" CYBERPUNK ASCII GENERATOR")
+    print("================================")
+    print()
+
     print("Loading portrait...")
 
     image = load_image()
@@ -518,7 +625,7 @@ def main():
     )
 
     print(
-        f"Generating SVG..."
+        "Generating animated SVG..."
     )
 
     svg = create_svg(
@@ -534,8 +641,16 @@ def main():
     print("================================")
     print(" CYBERPUNK ASCII GENERATED")
     print("================================")
+    print()
     print(
         f"Output: {OUTPUT}"
+    )
+    print()
+    print(
+        "Animation:"
+    )
+    print(
+        "  PRINT -> HOLD -> ERASE -> LOOP"
     )
     print()
 

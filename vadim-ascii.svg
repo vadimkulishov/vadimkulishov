@@ -1,15 +1,16 @@
 <svg
 xmlns="http://www.w3.org/2000/svg"
-width="372.0"
-height="379"
-viewBox="0 0 372.0 379"
+width="453.0"
+height="451"
+viewBox="0 0 453.0 451"
 role="img"
-aria-label="Cyberpunk ASCII portrait"
+aria-label="Cyberpunk ASCII portrait of Vadim Kulishov"
 >
 
 <style>
 
 .ascii {
+
     font-family:
         "SFMono-Regular",
         "Cascadia Code",
@@ -26,7 +27,13 @@ aria-label="Cyberpunk ASCII portrait"
     letter-spacing: 0px;
 }
 
+
+/* =====================================================
+   CYBERPUNK HEADER
+   ===================================================== */
+
 .header {
+
     fill: #fcee0a;
 
     font-family:
@@ -43,7 +50,9 @@ aria-label="Cyberpunk ASCII portrait"
     letter-spacing: 2px;
 }
 
+
 .meta {
+
     fill: #777b85;
 
     font-family:
@@ -58,153 +67,232 @@ aria-label="Cyberpunk ASCII portrait"
     letter-spacing: 1px;
 }
 
-.scan {
-    fill: #00f0ff;
 
-    opacity: 0.08;
-
-    animation:
-        scan 3s linear infinite;
-}
-
-@keyframes scan {
-
-    from {
-        transform:
-            translateY(-100px);
-    }
-
-    to {
-        transform:
-            translateY(379px);
-    }
-
-}
+/* =====================================================
+   ASCII PRINT ANIMATION
+   ===================================================== */
 
 .row {
+
     opacity: 0;
 
     animation:
         print-row
-        0.25s
-        ease-out
-        forwards;
+        10s
+        ease-in-out
+        infinite;
+
 }
+
 
 @keyframes print-row {
 
-    from {
+    /*
+     * START
+     */
+
+    0% {
+
         opacity: 0;
 
         clip-path:
             inset(
-                0
-                100%
-                0
-                0
+                0 100% 0 0
             );
+
     }
 
-    to {
+
+    /*
+     * PRINTED
+     */
+
+    30% {
+
         opacity: 1;
 
         clip-path:
             inset(
-                0
-                0
-                0
-                0
+                0 0 0 0
             );
+
+    }
+
+
+    /*
+     * HOLD
+     */
+
+    65% {
+
+        opacity: 1;
+
+        clip-path:
+            inset(
+                0 0 0 0
+            );
+
+    }
+
+
+    /*
+     * ERASE
+     */
+
+    100% {
+
+        opacity: 0;
+
+        clip-path:
+            inset(
+                0 100% 0 0
+            );
+
     }
 
 }
 
-.corner {
-    fill: none;
 
-    stroke-width: 1.5;
+/* =====================================================
+   SCANLINE
+   ===================================================== */
+
+.scan {
+
+    fill: #00f0ff;
+
+    opacity: 0.06;
+
+    animation:
+        scan
+        4s
+        linear
+        infinite;
+
 }
+
+
+@keyframes scan {
+
+    from {
+
+        transform:
+            translateY(-20px);
+
+    }
+
+    to {
+
+        transform:
+            translateY(451px);
+
+    }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+   ===================================================== */
 
 @media (prefers-reduced-motion: reduce) {
 
     .row {
+
         animation: none;
 
         opacity: 1;
+
+        clip-path:
+            inset(
+                0 0 0 0
+            );
+
     }
 
     .scan {
+
         animation: none;
+
     }
 
 }
 
 </style>
 
-<!-- BACKGROUND -->
+
+<!-- =====================================================
+     BACKGROUND
+     ===================================================== -->
 
 <rect
     x="1"
     y="1"
-    width="370.0"
-    height="377"
+    width="451.0"
+    height="449"
     rx="4"
     fill="#050509"
     stroke="#fcee0a"
     stroke-width="1.5"
 />
 
-<!-- ================================================= -->
-<!-- HUD CORNERS -->
-<!-- ================================================= -->
+
+<!-- =====================================================
+     HUD CORNERS
+     ===================================================== -->
 
 <path
-    class="corner"
-    stroke="#00f0ff"
     d="
         M1 35
         H18
         L28 25
         H70
     "
+    fill="none"
+    stroke="#00f0ff"
+    stroke-width="1.5"
 />
 
 <path
-    class="corner"
-    stroke="#ff2a6d"
     d="
-        M302.0 25
-        H344.0
-        L354.0 35
-        H371.0
+        M383.0 25
+        H425.0
+        L435.0 35
+        H452.0
     "
+    fill="none"
+    stroke="#ff2a6d"
+    stroke-width="1.5"
 />
 
 <path
-    class="corner"
-    stroke="#ff2a6d"
     d="
-        M1 349
+        M1 421
         H18
-        L28 359
+        L28 431
         H70
     "
+    fill="none"
+    stroke="#ff2a6d"
+    stroke-width="1.5"
 />
 
 <path
-    class="corner"
-    stroke="#00f0ff"
     d="
-        M302.0 359
-        H344.0
-        L354.0 349
-        H371.0
+        M383.0 431
+        H425.0
+        L435.0 421
+        H452.0
     "
+    fill="none"
+    stroke="#00f0ff"
+    stroke-width="1.5"
 />
 
-<!-- ================================================= -->
-<!-- HEADER -->
-<!-- ================================================= -->
+
+<!-- =====================================================
+     HEADER
+     ===================================================== -->
 
 <text
     class="header"
@@ -216,32 +304,35 @@ aria-label="Cyberpunk ASCII portrait"
 
 <text
     class="meta"
-    x="202.0"
+    x="283.0"
     y="23"
 >
     SUBJECT: VADIM
 </text>
 
+
 <line
     x1="24"
     y1="38"
-    x2="348.0"
+    x2="429.0"
     y2="38"
     stroke="#24262d"
     stroke-width="1"
 />
 
-<!-- ================================================= -->
-<!-- SCANLINE -->
-<!-- ================================================= -->
+
+<!-- =====================================================
+     SCANLINE
+     ===================================================== -->
 
 <rect
     class="scan"
     x="0"
     y="0"
-    width="372.0"
+    width="453.0"
     height="2"
 />
+
 
 
 
@@ -249,9 +340,12 @@ aria-label="Cyberpunk ASCII portrait"
     class="ascii row"
     x="24"
     y="52"
-    style="animation-delay:0.000s"
+    style="
+        animation-delay:
+        0.000s;
+    "
 >
-    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 </text>
 
 
@@ -259,9 +353,12 @@ aria-label="Cyberpunk ASCII portrait"
     class="ascii row"
     x="24"
     y="61"
-    style="animation-delay:0.035s"
+    style="
+        animation-delay:
+        0.035s;
+    "
 >
-    @@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 </text>
 
 
@@ -269,9 +366,12 @@ aria-label="Cyberpunk ASCII portrait"
     class="ascii row"
     x="24"
     y="70"
-    style="animation-delay:0.070s"
+    style="
+        animation-delay:
+        0.070s;
+    "
 >
-    @@@@@@@@@@@@@@@@@@@@@@@@%+==----=+*%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%##****##%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 </text>
 
 
@@ -279,9 +379,12 @@ aria-label="Cyberpunk ASCII portrait"
     class="ascii row"
     x="24"
     y="79"
-    style="animation-delay:0.105s"
+    style="
+        animation-delay:
+        0.105s;
+    "
 >
-    @@@@@@@@@@@@@@@@@@@@@@%=:.:::::.   .*%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@%#=:--::-::::-+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 </text>
 
 
@@ -289,9 +392,12 @@ aria-label="Cyberpunk ASCII portrait"
     class="ascii row"
     x="24"
     y="88"
-    style="animation-delay:0.140s"
+    style="
+        animation-delay:
+        0.140s;
+    "
 >
-    @@@@@@@@@@@@@@@@@@@@@@* .::------==::#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@#-..:::::::.    .+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 </text>
 
 
@@ -299,9 +405,12 @@ aria-label="Cyberpunk ASCII portrait"
     class="ascii row"
     x="24"
     y="97"
-    style="animation-delay:0.175s"
+    style="
+        animation-delay:
+        0.175s;
+    "
 >
-    @@@@@@@@@@@@@@@@@@@@@@#.:=++**##%%#*=#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@%- .::::::::::-=-..*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 </text>
 
 
@@ -309,9 +418,12 @@ aria-label="Cyberpunk ASCII portrait"
     class="ascii row"
     x="24"
     y="106"
-    style="animation-delay:0.210s"
+    style="
+        animation-delay:
+        0.210s;
+    "
 >
-    @@@@@@@@@@@@@@@@@@@@@@%::==+++*##*++=%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@+ .:===+++**###**-*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 </text>
 
 
@@ -319,9 +431,12 @@ aria-label="Cyberpunk ASCII portrait"
     class="ascii row"
     x="24"
     y="115"
-    style="animation-delay:0.245s"
+    style="
+        animation-delay:
+        0.245s;
+    "
 >
-    @@@@@@@@@@@@@@@@@@@@@%*=-=-::-:+=:-=+*%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@#.:=+***##%%%%%#*=#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 </text>
 
 
@@ -329,9 +444,12 @@ aria-label="Cyberpunk ASCII portrait"
     class="ascii row"
     x="24"
     y="124"
-    style="animation-delay:0.280s"
+    style="
+        animation-delay:
+        0.280s;
+    "
 >
-    @@@@@@@@@@@@@@@@@@@@@%*=--++**-=####*#%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@%::====--=+#*==-==#%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 </text>
 
 
@@ -339,9 +457,12 @@ aria-label="Cyberpunk ASCII portrait"
     class="ascii row"
     x="24"
     y="133"
-    style="animation-delay:0.315s"
+    style="
+        animation-delay:
+        0.315s;
+    "
 >
-    @@@@@@@@@@@@@@@@@@@@@@%#*--+*+:-+*#*#%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@#+=:-=-::-::*+::-=+*#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 </text>
 
 
@@ -349,9 +470,12 @@ aria-label="Cyberpunk ASCII portrait"
     class="ascii row"
     x="24"
     y="142"
-    style="animation-delay:0.350s"
+    style="
+        animation-delay:
+        0.350s;
+    "
 >
-    @@@@@@@@@@@@@@@@@@@@@@@@@+--=-:-=++*%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@%+---+++**+:+#***#**%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 </text>
 
 
@@ -359,9 +483,12 @@ aria-label="Cyberpunk ASCII portrait"
     class="ascii row"
     x="24"
     y="151"
-    style="animation-delay:0.385s"
+    style="
+        animation-delay:
+        0.385s;
+    "
 >
-    @@@@@@@@@@@@@@@@@@@@@@@@@%-::-==+++%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@#+=--=**#=.=**###*#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 </text>
 
 
@@ -369,9 +496,12 @@ aria-label="Cyberpunk ASCII portrait"
     class="ascii row"
     x="24"
     y="160"
-    style="animation-delay:0.420s"
+    style="
+        animation-delay:
+        0.420s;
+    "
 >
-    @@@@@@@@@@@@@@@@@@@@@@@%%*::::::-=+#%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%+:-=+=---=+***#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 </text>
 
 
@@ -379,9 +509,12 @@ aria-label="Cyberpunk ASCII portrait"
     class="ascii row"
     x="24"
     y="169"
-    style="animation-delay:0.455s"
+    style="
+        animation-delay:
+        0.455s;
+    "
 >
-    @@@@@@@@@@@@@@@@@%%%%#*+-::----=+*+*#****##%%@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%-----::-==++*%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 </text>
 
 
@@ -389,9 +522,12 @@ aria-label="Cyberpunk ASCII portrait"
     class="ascii row"
     x="24"
     y="178"
-    style="animation-delay:0.490s"
+    style="
+        animation-delay:
+        0.490s;
+    "
 >
-    @@@@@@@@@@@@@@%#**********++++**##%%##***####%%@@@@@@@@@@@@@@@@@@@@@@@@@
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@+:::--=+++++%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 </text>
 
 
@@ -399,9 +535,12 @@ aria-label="Cyberpunk ASCII portrait"
     class="ascii row"
     x="24"
     y="187"
-    style="animation-delay:0.525s"
+    style="
+        animation-delay:
+        0.525s;
+    "
 >
-    @@@@@@@@@@@@@#+*##%%%%%#######%%%%%%%%###%%%%##%@@@@@@@@@@@@@@@@@@@@@@@@
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%+:::::.::-+*%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 </text>
 
 
@@ -409,9 +548,12 @@ aria-label="Cyberpunk ASCII portrait"
     class="ascii row"
     x="24"
     y="196"
-    style="animation-delay:0.560s"
+    style="
+        animation-delay:
+        0.560s;
+    "
 >
-    @@@@@@@@@@@@#+*##%%%%%%%%#####%%%%%%%%%%%%%%%####%@@@@@@@@@@@@@@@@@@@@@@
+    @@@@@@@@@@@@@@@@@@@@@@@@@@%%#*=:::-----=++*+*###%%%%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 </text>
 
 
@@ -419,9 +561,12 @@ aria-label="Cyberpunk ASCII portrait"
     class="ascii row"
     x="24"
     y="205"
-    style="animation-delay:0.595s"
+    style="
+        animation-delay:
+        0.595s;
+    "
 >
-    @@@@@@@@@@@#+**########%%%#%##%%%%%%%%%%%%########%@@@@@@@@@@@@@@@@@@@@@
+    @@@@@@@@@@@@@@@@@@@@%%%##*++=+=-----===++***%#****+***##%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 </text>
 
 
@@ -429,9 +574,12 @@ aria-label="Cyberpunk ASCII portrait"
     class="ascii row"
     x="24"
     y="214"
-    style="animation-delay:0.630s"
+    style="
+        animation-delay:
+        0.630s;
+    "
 >
-    @@@@@@@@@@#+***##+**######%%%%%#%%%%%%%%%##***#####%@@@@@@@@@@@@@@@@@@@@
+    @@@@@@@@@@@@@@@@@%#****************+**###%%%%%##**##%####%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 </text>
 
 
@@ -439,9 +587,12 @@ aria-label="Cyberpunk ASCII portrait"
     class="ascii row"
     x="24"
     y="223"
-    style="animation-delay:0.665s"
+    style="
+        animation-delay:
+        0.665s;
+    "
 >
-    @@@@@@@@@%+***###++***#####%%%%%%%%%%%%%####++*######%@@@@@@@@@@@@@@@@@@
+    @@@@@@@@@@@@@@@@%++*##%%%%%%%########%%%%%%%%%%%###%%%%%###%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 </text>
 
 
@@ -449,9 +600,12 @@ aria-label="Cyberpunk ASCII portrait"
     class="ascii row"
     x="24"
     y="232"
-    style="animation-delay:0.700s"
+    style="
+        animation-delay:
+        0.700s;
+    "
 >
-    @@@@@@@@%+***###%+=*****###################*++**######%@@@@@@@@@@@@@@@@@
+    @@@@@@@@@@@@@@@%++*#%%%%%%%%%%%#######%%%%%%%#%%%%%%%%%%####%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 </text>
 
 
@@ -459,9 +613,12 @@ aria-label="Cyberpunk ASCII portrait"
     class="ascii row"
     x="24"
     y="241"
-    style="animation-delay:0.735s"
+    style="
+        animation-delay:
+        0.735s;
+    "
 >
-    @@@@@@@%+*****###*--+*#*++*###########*****+---=+*#%##*#%@@@@@@@@@@@@@@@
+    @@@@@@@@@@@@@@%++*###%####%%%%%%#####%%%%%%%%%%%%%%%%%########%@@@@@@@@@@@@@@@@@@@@@@@@@@@
 </text>
 
 
@@ -469,9 +626,12 @@ aria-label="Cyberpunk ASCII portrait"
     class="ascii row"
     x="24"
     y="250"
-    style="animation-delay:0.770s"
+    style="
+        animation-delay:
+        0.770s;
+    "
 >
-    @@@@@@%*########*+:.-+#%*++##########*****+*##+==--=+****#@@@@@@@@@@@@@@
+    @@@@@@@@@@@@@%++***##*#########%%%%%%%%%%%%%%%%%%%%%%#***######%@@@@@@@@@@@@@@@@@@@@@@@@@@
 </text>
 
 
@@ -479,9 +639,12 @@ aria-label="Cyberpunk ASCII portrait"
     class="ascii row"
     x="24"
     y="259"
-    style="animation-delay:0.805s"
+    style="
+        animation-delay:
+        0.805s;
+    "
 >
-    @@@@@%==+**#%##***:.:-+#%#++*####%%%##%###**%@@@%#+--=+****%@@@@@@@@@@@@
+    @@@@@@@@@@@@%++**#*##++***######%%%%%%%##%%%%%%%%%%####**####%#*%@@@@@@@@@@@@@@@@@@@@@@@@@
 </text>
 
 
@@ -489,9 +652,12 @@ aria-label="Cyberpunk ASCII portrait"
     class="ascii row"
     x="24"
     y="268"
-    style="animation-delay:0.840s"
+    style="
+        animation-delay:
+        0.840s;
+    "
 >
-    @@@@@*=+**+=-*##%%=+::-+#%#+++*#%%#%%%#####*#%%%%@@%+-=+*#**#@@@@@@@@@@@
+    @@@@@@@@@@@%*+****##%*=+****######%%%%%%%%%%%%%%%%#####*+**#####*#%@@@@@@@@@@@@@@@@@@@@@@@
 </text>
 
 
@@ -499,9 +665,12 @@ aria-label="Cyberpunk ASCII portrait"
     class="ascii row"
     x="24"
     y="277"
-    style="animation-delay:0.875s"
+    style="
+        animation-delay:
+        0.875s;
+    "
 >
-    @@@@#-=+***++%%@@%==*=--+#%%#+++*#%%######*+#%%%%%%@@#==**##+#@@@@@@@@@@
+    @@@@@@@@@@@*+***####%*=+******#####%###%%##############++***#######%@@@@@@@@@@@@@@@@@@@@@@
 </text>
 
 
@@ -509,9 +678,12 @@ aria-label="Cyberpunk ASCII portrait"
     class="ascii row"
     x="24"
     y="286"
-    style="animation-delay:0.910s"
+    style="
+        animation-delay:
+        0.910s;
+    "
 >
-    @@@@+:-=++****##%%*:-**+===*%%#****######*+**%%%%%%%%@%+=+*#*+#@@@@@@@@@
+    @@@@@@@@@%*+*#***#####=-+****++*##################**##+-==****##%%%*#%@@@@@@@@@@@@@@@@@@@@
 </text>
 
 
@@ -519,9 +691,12 @@ aria-label="Cyberpunk ASCII portrait"
     class="ascii row"
     x="24"
     y="295"
-    style="animation-delay:0.945s"
+    style="
+        animation-delay:
+        0.945s;
+    "
 >
-    @@@@#-:--=++******+-::=#***==+*####*********+#%%%%%%%%@%*=+*#*+%@@@@@@@@
+    @@@@@@@@%*+**#*#**##*#+::=*###+=+##############*****+*==--:-=+**#***+*%@@@@@@@@@@@@@@@@@@@
 </text>
 
 
@@ -529,9 +704,12 @@ aria-label="Cyberpunk ASCII portrait"
     class="ascii row"
     x="24"
     y="304"
-    style="animation-delay:0.980s"
+    style="
+        animation-delay:
+        0.980s;
+    "
 >
-    @@@@@%#+----=++++++++*+**+++**++*########*++*+#%%%%%%%%%@#==+*+*%@@@@@@@
+    @@@@@@@%**##########*+-..:=*#%#+=+######%%%#######***+*%%#*+=---=++*****%@@@@@@@@@@@@@@@@@
 </text>
 
 
@@ -539,9 +717,12 @@ aria-label="Cyberpunk ASCII portrait"
     class="ascii row"
     x="24"
     y="313"
-    style="animation-delay:1.015s"
+    style="
+        animation-delay:
+        1.015s;
+    "
 >
-    @@@@@@@@%#+=------=++**#**++=--===+****+++***+*%%%%%%%%%%@%+=****%@@@@@@
+    @@@@@@@#-=+**#%%%##*+*=..::=*#%#*=+*%%###%%%%##%%####*+#@@@@%%*=--==+*#**#%@@@@@@@@@@@@@@@
 </text>
 
 
@@ -549,17 +730,124 @@ aria-label="Cyberpunk ASCII portrait"
     class="ascii row"
     x="24"
     y="322"
-    style="animation-delay:1.050s"
+    style="
+        animation-delay:
+        1.050s;
+    "
 >
-    @@@@@@@@@@@@%=.....:-++************+++**####****#%%%%%%%%%%%++***#%@@@@@
+    @@@@@@%==+**++==*#**%@+==.::=*###*+=+*#%%##%%%%%######*#%%%%%@@%#=-==+*****%@@@@@@@@@@@@@@
+</text>
+
+
+<text
+    class="ascii row"
+    x="24"
+    y="331"
+    style="
+        animation-delay:
+        1.085s;
+    "
+>
+    @@@@@@+-+****+=-*#%@@@*=*+:--=#%%##++++*#%%%%%########+#%%%%%%%%@%*--+**##*+%@@@@@@@@@@@@@
+</text>
+
+
+<text
+    class="ascii row"
+    x="24"
+    y="340"
+    style="
+        animation-delay:
+        1.120s;
+    "
+>
+    @@@@@#--=++***+*#%@@@@%--**====+#%%%#*+++*##%########+**%%%%%%%%%@@#==+**##++%@@@@@@@@@@@@
+</text>
+
+
+<text
+    class="ascii row"
+    x="24"
+    y="349"
+    style="
+        animation-delay:
+        1.155s;
+    "
+>
+    @@@@@*:--==++******#%%@=::+#*++=-=*%%%#******######*++*+%%%%%%%%%%%@%+-=*##*++%@@@@@@@@@@@
+</text>
+
+
+<text
+    class="ascii row"
+    x="24"
+    y="358"
+    style="
+        animation-delay:
+        1.190s;
+    "
+>
+    @@@@@%-:---==++*****++*+-:.-*###*+=-+*#%###********+***+*%%%%%%%%%%%@%*==**#*+*%@@@@@@@@@@
+</text>
+
+
+<text
+    class="ascii row"
+    x="24"
+    y="367"
+    style="
+        animation-delay:
+        1.225s;
+    "
+>
+    @@@@@@%*=----===++++++++++++=**+**#**+++##%%%####%##*++*+*%%%%%%%%%%%%@#==+***+#@@@@@@@@@@
+</text>
+
+
+<text
+    class="ascii row"
+    x="24"
+    y="376"
+    style="
+        animation-delay:
+        1.260s;
+    "
+>
+    @@@@@@@@@%*+-----=======++*##***+=-==++++***#####***++**++#%%%%%%%%%%%%@%+-=***+%@@@@@@@@@
+</text>
+
+
+<text
+    class="ascii row"
+    x="24"
+    y="385"
+    style="
+        animation-delay:
+        1.295s;
+    "
+>
+    @@@@@@@@@@@@%#*+-::----==++********+=---====++**+++++**#***#%%%%%%%%%%%%%%*-+***+%@@@@@@@@
+</text>
+
+
+<text
+    class="ascii row"
+    x="24"
+    y="394"
+    style="
+        animation-delay:
+        1.330s;
+    "
+>
+    @@@@@@@@@@@@@@@@#.......:-=++*************#*+++**######**#+*#%%%%%%%%%%%%%@*=*****%@@@@@@@
 </text>
 
 
 <line
     x1="24"
-    y1="333"
-    x2="348.0"
-    y2="333"
+    y1="405"
+    x2="429.0"
+    y2="405"
     stroke="#24262d"
     stroke-width="1"
 />
@@ -567,15 +855,15 @@ aria-label="Cyberpunk ASCII portrait"
 <text
     class="meta"
     x="24"
-    y="351"
+    y="423"
 >
     SCAN COMPLETE
 </text>
 
 <text
     class="meta"
-    x="222.0"
-    y="351"
+    x="303.0"
+    y="423"
 >
     NODE: NIGHT CITY
 </text>
