@@ -3,41 +3,6 @@
   "source": "https://github.com/users/vadimkulishov/contributions",
   "days": [
     {
-      "date": "2025-08-31",
-      "level": 0,
-      "count": 0
-    },
-    {
-      "date": "2025-09-01",
-      "level": 0,
-      "count": 0
-    },
-    {
-      "date": "2025-09-02",
-      "level": 0,
-      "count": 0
-    },
-    {
-      "date": "2025-09-03",
-      "level": 0,
-      "count": 0
-    },
-    {
-      "date": "2025-09-04",
-      "level": 0,
-      "count": 0
-    },
-    {
-      "date": "2025-09-05",
-      "level": 0,
-      "count": 0
-    },
-    {
-      "date": "2025-09-06",
-      "level": 0,
-      "count": 0
-    },
-    {
       "date": "2025-09-07",
       "level": 0,
       "count": 0
@@ -1856,6 +1821,11 @@
       "date": "2026-09-05",
       "level": 0,
       "count": 0
+    },
+    {
+      "date": "2026-09-06",
+      "level": 0,
+      "count": 0
     }
   ],
   "stats": {
@@ -1871,7 +1841,6 @@
       "count": 27
     },
     "monthly": {
-      "2025-08": 0,
       "2025-09": 0,
       "2025-10": 1,
       "2025-11": 0,
